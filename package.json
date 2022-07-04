@@ -19,6 +19,7 @@
         "sass-loader": "^12.1.0"
     },
     "dependencies": {
-        "autoprefixer": "10.4.5"
+        "autoprefixer": "10.4.5",
+        "jquery": "^3.6.0"
     }
 }

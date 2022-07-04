@@ -571,7 +571,7 @@ img {
             }
             .countdown__time {
                 &:before {
-                    content: url('../images/shape/2.png');
+                    content: url('/img/shape/2.png');
                 }
             }
         }
@@ -584,7 +584,7 @@ img {
             }
             .countdown__time {
                 &:before {
-                    content: url('../images/shape/2.png');
+                    content: url('/img/shape/2.png');
                 }
             }
         }
@@ -619,7 +619,7 @@ img {
     font-size: 18px;
     font-weight: 500;
     &:before {
-        content: url('../images/shape/1.png');
+        content: url('/img/shape/1.png');
         position: absolute;
         bottom: -15px;
         left: 50%;
@@ -922,7 +922,7 @@ blockquote {
     margin-top: -10px;
     margin-bottom: 50px;
     &:before {
-        content: url('../images/blog/blockquote/quotation.png');
+        content: url('/img/blog/blockquote/quotation.png');
         transform: translate(-50%, -50%);
         position: absolute;
         top: 50%;
