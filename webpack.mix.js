@@ -11,6 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
+mix.webpackConfig({
+    stats: {
+        children: true,
+},});
 
-
-// .version()
+mix.sass('resources/css/styles/style.scss', 'public/css/styles/styles.css').version();
