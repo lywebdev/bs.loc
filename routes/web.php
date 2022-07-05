@@ -14,3 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
+
+Route::group([
+    'prefix' => 'catalog',
+    'as' => 'catalog.',
+], function() {
+    Route::get('', [\App\Http\Controllers\CatalogController::class, 'index'])->name('index');
+});
