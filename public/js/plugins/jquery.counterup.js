@@ -1,1 +1,122 @@
-!function(t){"use strict";t.fn.counterUp=function(e){var a,n=t.extend({time:400,delay:10,formatter:!1,callback:function(){}},e);return this.each((function(){var e=t(this),u={time:t(this).data("counterup-time")||n.time,delay:t(this).data("counterup-delay")||n.delay};e.waypoint((function(t){!function(){var t=[],r=u.time/u.delay,i=e.text(),o=/[0-9]+,[0-9]+/.test(i),c=/[0-9]+ [0-9]+/.test(i),s=((i=(i=i.replace(/,/g,"")).replace(/ /g,"")).split(".")[1]||[]).length,d=/[0-9]+:[0-9]+:[0-9]+/.test(i);if(d){var l=i.split(":"),p=1;for(a=0;l.length>0;)a+=p*parseInt(l.pop(),10),p*=60}for(var f=r;f>=1;f--){var h=parseFloat(i/r*f).toFixed(s);if(d){h=parseInt(a/r*f);var m=parseInt(h/3600)%24,y=parseInt(h/60)%60,g=parseInt(h%60,10);h=(m<10?"0"+m:m)+":"+(y<10?"0"+y:y)+":"+(g<10?"0"+g:g)}if(o)for(;/(\d+)(\d{3})/.test(h.toString());)h=h.toString().replace(/(\d+)(\d{3})/,"$1,$2");if(c)for(;/(\d+)(\d{3})/.test(h.toString());)h=h.toString().replace(/(\d+)(\d{3})/,"$1 $2");t.unshift(h)}e.data("counterup-nums",t),e.text("0"),e.data("counterup-func",(function(){e.html(e.data("counterup-nums").shift()),e.data("counterup-nums").length?setTimeout(e.data("counterup-func"),u.delay):(e.data("counterup-nums",null),e.data("counterup-func",null),n.callback.call(this))})),setTimeout(e.data("counterup-func"),u.delay)}(),this.destroy()}),{offset:"100%"})}))}}(jQuery);
+/*!
+ * jquery.counterup.js 2.0.0
+ *
+ * Copyright 2013, Benjamin Intal http://gambit.ph @bfintal
+ * Released under the GPL v2 License
+ *
+ * Amended by Ciro Mattia Gonano and others
+ *
+ * Date: Mar 24, 2016
+ */
+(function ($) {
+    "use strict";
+
+    $.fn.counterUp = function (options) {
+
+        // Defaults
+        var settings = $.extend({
+                'time': 400,
+                'delay': 10,
+                'formatter': false,
+                callback: function () {
+                }
+            }, options),
+            s;
+
+        return this.each(function () {
+
+            // Store the object
+            var $this = $(this),
+                counter = {
+                    time: $(this).data('counterup-time') || settings.time,
+                    delay: $(this).data('counterup-delay') || settings.delay
+                };
+
+            var counterUpper = function () {
+                var nums = [];
+                var divisions = counter.time / counter.delay;
+                var num = $this.text();
+                var isComma = /[0-9]+,[0-9]+/.test(num);
+                var isSpace = /[0-9]+ [0-9]+/.test(num);
+                num = num.replace(/,/g, "");
+                num = num.replace(/ /g, "");
+                var decimalPlaces = (num.split('.')[1] || []).length;
+
+                var isTime = /[0-9]+:[0-9]+:[0-9]+/.test(num);
+
+                // Convert time to total seconds
+                if (isTime) {
+                    var times = num.split(':'),
+                        m = 1;
+                    s = 0;
+                    while (times.length > 0) {
+                        s += m * parseInt(times.pop(), 10);
+                        m *= 60;
+                    }
+                }
+
+                // Generate list of incremental numbers to display
+                for (var i = divisions; i >= 1; i--) {
+
+                    var newNum = parseFloat(num / divisions * i).toFixed(decimalPlaces);
+
+                    // Add incremental seconds and convert back to time
+                    if (isTime) {
+                        newNum = parseInt(s / divisions * i);
+                        var hours = parseInt(newNum / 3600) % 24;
+                        var minutes = parseInt(newNum / 60) % 60;
+                        var seconds = parseInt(newNum % 60, 10);
+                        newNum = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+                    }
+
+                    // Preserve commas if input had commas
+                    if (isComma) {
+                        while (/(\d+)(\d{3})/.test(newNum.toString())) {
+                            newNum = newNum
+                                .toString()
+                                .replace(/(\d+)(\d{3})/, "$1" + "," + "$2");
+                        }
+                    }
+
+                    // Preserve space if input had space
+                    if (isSpace) {
+                        while (/(\d+)(\d{3})/.test(newNum.toString())) {
+                            newNum = newNum
+                                .toString()
+                                .replace(/(\d+)(\d{3})/, "$1" + " " + "$2");
+                        }
+                    }
+
+                    nums.unshift(newNum);
+                }
+
+                $this.data('counterup-nums', nums);
+                $this.text('0');
+
+                // Updates the number until we're done
+                var f = function () {
+                    $this.html($this.data('counterup-nums').shift());
+                    if ($this.data('counterup-nums').length) {
+                        setTimeout($this.data('counterup-func'), counter.delay);
+                    } else {
+                        $this.data('counterup-nums', null);
+                        $this.data('counterup-func', null);
+                        settings.callback.call(this);
+                    }
+                };
+                $this.data('counterup-func', f);
+
+                // Start the count up
+                setTimeout($this.data('counterup-func'), counter.delay);
+            };
+
+            // Perform counts when the element gets into view
+            $this.waypoint(function (direction) {
+                counterUpper();
+                this.destroy(); //-- Waypoint 3.0 version of triggerOnce
+            }, {offset: '100%'});
+        });
+
+    };
+
+})(jQuery);
