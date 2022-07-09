@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
 Route::group([
@@ -20,19 +21,4 @@ Route::group([
     'as' => 'catalog.',
 ], function() {
     Route::get('', [\App\Http\Controllers\CatalogController::class, 'index'])->name('index');
-});
-
-
-Route::group([
-    'prefix' => 'admin',
-    'as' => 'admin.'
-], function() {
-    Route::get('', [\App\Http\Controllers\Admin\HomeController::class, 'home']);
-
-    Route::group([
-        'prefix' => 'categories',
-        'as' => 'categories.'
-    ], function() {
-        Route::get('', [\App\Http\Controllers\Admin\CategoriesController::class, 'index'])->name('index');
-    });
 });

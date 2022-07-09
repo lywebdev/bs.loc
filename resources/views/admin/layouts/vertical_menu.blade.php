@@ -31,7 +31,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('admin.categories.index') }}">Все категории</a></li>
-                        <li><a href="#">Добавить</a></li>
+                        <li><a href="{{ route('admin.categories.create') }}">Добавить</a></li>
                     </ul>
                 </li>
 
