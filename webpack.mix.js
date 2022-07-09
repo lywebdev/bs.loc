@@ -46,3 +46,7 @@ mix.sass('resources/css/styles/style.scss', 'public/css/styles.css')
     .version();
 
 mix.copy('resources/img', 'public/img');
+
+
+// Admin template
+mix.copy('resources/assets', 'public/assets');
