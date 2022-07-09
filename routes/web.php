@@ -28,4 +28,11 @@ Route::group([
     'as' => 'admin.'
 ], function() {
     Route::get('', [\App\Http\Controllers\Admin\HomeController::class, 'home']);
+
+    Route::group([
+        'prefix' => 'categories',
+        'as' => 'categories.'
+    ], function() {
+        Route::get('', [\App\Http\Controllers\Admin\CategoriesController::class, 'index'])->name('index');
+    });
 });
