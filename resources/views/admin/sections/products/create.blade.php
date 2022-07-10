@@ -26,12 +26,55 @@
                             <form action="{{ route('admin.products.store') }}" method="post">
                                 @csrf
                                 <div class="mb-3 row">
-                                    <label for="example-text-input" class="col-md-2 col-form-label">Наименование товарной позиции</label>
-                                    <div class="col-md-10">
-                                        @include('admin.components.inputs.input', [
-                                            'name' => 'product[name]',
-                                            'placeholder' => 'Наименование товарной позиции',
-                                        ])
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="product[name]" class="col col-form-label">Наименование товарной позиции</label>
+                                            <div class="col">
+                                                @include('admin.components.inputs.input', [
+                                                    'name' => 'product[name]',
+                                                    'placeholder' => 'Наименование товарной позиции',
+                                                ])
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="product[vendor_code]" class="col col-form-label">Артикул товарной позиции</label>
+                                            <div class="col">
+                                                @include('admin.components.inputs.input', [
+                                                    'name' => 'product[vendor_code]',
+                                                    'placeholder' => 'Артикул товарной позиции',
+                                                ])
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="product[price]" class="col col-form-label">Стоимость товара</label>
+                                            <div class="col">
+                                                @include('admin.components.inputs.input_number', [
+                                                    'name' => 'product[price]',
+                                                    'placeholder' => 'Стоимость товара',
+                                                ])
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="product[old_price]" class="col col-form-label">Предыдущая стоимость товара</label>
+                                            <div class="col">
+                                                @include('admin.components.inputs.input', [
+                                                    'name' => 'product[old_price]',
+                                                    'placeholder' => 'Предыдущая стоимость товара',
+                                                ])
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4 class="card-title">Загрузка изображений</h4>
+                                            @include('admin.components.images_loader.images_loader')
+                                        </div>
                                     </div>
                                 </div>
                                 <div>
