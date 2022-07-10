@@ -20,6 +20,11 @@ class ProductsController extends Controller
         return view('admin.sections.products.create');
     }
 
+    public function store(Request $request)
+    {
+        $requestProduct = $request->get('product');
+        $requestPhotos = $request->files;
+    }
 //    public function store(Request $request)
 //    {
 //        $requestCategory = $request->get('category');
