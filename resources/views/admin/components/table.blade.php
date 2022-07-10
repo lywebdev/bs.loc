@@ -24,7 +24,38 @@ data - данные таблицы, которые нужно отобразит
         <tr>
             <th scope="row">{{ $row->id }}</th>
             @foreach ($tbody as $tr)
-                <td>{{ $row->$tr }}</td>
+                @if (is_array($tr))
+                    @switch ($tr[0])
+                        @case('image')
+                            <td>
+                                @if (strpos(mb_strtolower($row->{$tr[1]}), 'http') === false)
+                                    <img
+                                        src="{{ \Illuminate\Support\Facades\Storage::get($row->{$tr[1]}) }}"
+                                        alt=""
+                                        style="height: 150px; width: 150px"
+                                    >
+                                @else
+                                    <img
+                                        src="{{ $row->{$tr[1]} }}"
+                                        alt=""
+                                        style="height: 150px; width: 150px"
+                                    >
+                                @endif
+                            </td>
+                        @break
+                        @case('relation')
+                            <td>
+                                @if (isset($row->{$tr[1]}))
+                                    {{ $row->{$tr[1]}->{$tr[2]} }}
+                                @else
+                                    -
+                                @endif
+                            </td>
+                        @break
+                    @endswitch
+                @else
+                    <td>{{ $row->{$tr} }}</td>
+                @endif
             @endforeach
             <td style="display: flex;">
                 <a href="{{ route($route . '.edit', $row->id) }}" class="btn btn-outline-success btn-sm">Редактировать</a>

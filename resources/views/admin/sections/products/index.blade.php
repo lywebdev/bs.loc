@@ -36,22 +36,22 @@
                             @include('admin.components.table', [
                                 'thead' => [
                                     '#',
+                                    'Изображение',
                                     'Наименование',
                                     'Артикул',
-                                    'Изображение',
                                     'Категория',
                                     'Количество',
                                     'Действия'
                                 ],
                                 'tbody' => [
+                                    ['image', 'preview'],
                                     'name',
                                     'vendor_code',
-                                    'image', - сделать возможность отрисовки какой-то кастомной штуки в таблице, мб передавать в виде массива где идет тип (связь, коллбэк и т.д.), и далее проверять массив ли это, затем тип и уже дальше там делать чета
-                                    ['category_id', Category::class, 'name'],
+                                    ['relation', 'category', 'name'],
                                     'quantity'
                                 ],
-                                'data' => $categories,
-                                'route' => 'admin.categories'
+                                'data' => $products,
+                                'route' => 'admin.products'
                             ])
                         </div>
                         <!-- end card-body -->

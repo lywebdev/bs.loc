@@ -21,3 +21,12 @@ Breadcrumbs::for('admin.categories.edit', function(BreadcrumbTrail $trail, \App\
     $trail->parent('admin.categories.index');
     $trail->push('Редактирование "' . $category->name . '"', route('admin.categories.create', $category->id));
 });
+
+Breadcrumbs::for('admin.products.index', function(BreadcrumbTrail $trail) {
+    $trail->parent('admin.home');
+    $trail->push('Товары', route('admin.products.index'));
+});
+Breadcrumbs::for('admin.products.create', function(BreadcrumbTrail $trail) {
+    $trail->parent('admin.products.index');
+    $trail->push('Добавление товара', route('admin.products.create'));
+});
