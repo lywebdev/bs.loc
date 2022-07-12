@@ -23,7 +23,7 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('admin.products.store') }}" method="post">
+                            <form action="{{ route('admin.products.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3 row">
                                     <div class="row">

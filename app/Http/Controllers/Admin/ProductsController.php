@@ -23,7 +23,11 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $requestProduct = $request->get('product');
-        $requestPhotos = $request->files;
+        $requestPhotos = $request->get('files'); // blobs
+
+        foreach ($requestPhotos as $photo) {
+            dd($photo);
+        }
     }
 //    public function store(Request $request)
 //    {

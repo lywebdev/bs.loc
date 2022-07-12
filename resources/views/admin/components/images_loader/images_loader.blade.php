@@ -24,6 +24,17 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function makeid(length) {
+        let result           = '';
+        let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let charactersLength = characters.length;
+        for ( let i = 0; i < length; i++ ) {
+            result += characters.charAt(Math.floor(Math.random() *
+                charactersLength));
+        }
+        return result;
+    }
+
     function uploadImage() {
         if ($tempArea.find('.images-loader__item').length === 0) {
             let inputTemplate = (`
@@ -51,13 +62,15 @@ window.addEventListener('DOMContentLoaded', () => {
                     reader.readAsDataURL(file);
 
                     reader.onload = () => {
+                        let hash = makeid(10);
                         let blob = reader.result;
                         let template = (`
-                            <div class="images-loader__image">
+                            <div class="images-loader__image" data-hash="${hash}">
                                 <img src="${blob}" alt="" style="width: 250px; height: 200px;">
-                                <input type="file" name="files[]" style="display: none;">
+                                <input type="input" name="files[]" style="display: none;" value="${blob}">
                             </div>
                         `);
+                        $(`.images-loader__image[data-hash="${hash}"]`).val(blob);
 
                         $imagesContainer.append(template);
                     }
