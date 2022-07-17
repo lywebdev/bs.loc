@@ -63,12 +63,16 @@
 <!-- apexcharts js -->
 <script src="{{ asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
+<script src="{{ asset('assets/libs/select2/js/select2.min.js') }}"></script>
+
 <!-- jquery.vectormap map -->
 <script src="{{ asset('assets/libs/jqvmap/jquery.vmap.min.js') }}"></script>
 <script src="{{ asset('assets/libs/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
 
 <script src="{{ asset('assets/js/pages/dashboard.init.js') }}"></script>
 
+<!-- init js -->
+<script src="{{ asset('assets/js/pages/form-advanced.init.js') }}"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
 
 </body>

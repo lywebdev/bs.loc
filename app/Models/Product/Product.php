@@ -10,6 +10,19 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
+/**
+ * @property string $name Наименование товарной позиции
+ * @property string slug ЧПУ товарной позиции
+ * @property int price Стоимость товарной позиции
+ * @property ?int $old_price Предыдущая стоимость товарной позиции
+ * @property string $availability Наличие товара
+ * @property int $quantity Количество товара
+ * @property string $vendor_code Артикул товара
+ * @property ?int $category_id ИД категории
+ * @property ?int $manufacturer_id ИД производителя
+ * @property ?string $preview Превью
+ * @property bool $status Статус доступности товара
+ */
 class Product extends Model
 {
     use HasFactory;

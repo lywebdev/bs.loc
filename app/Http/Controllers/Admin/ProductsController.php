@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Product\StoreRequest;
+use App\Models\Category\Category;
 use App\Models\Product\Product;
 use App\Services\MediaService\MediaService;
 use Illuminate\Http\Request;
@@ -26,10 +28,12 @@ class ProductsController extends Controller
 
     public function create()
     {
-        return view('admin.sections.products.create');
+        $productsCategories = Category::all();
+
+        return view('admin.sections.products.create', compact('productsCategories'));
     }
 
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $requestProduct = $request->get('product');
         $requestPhotos = $request->get('files'); // blobs
@@ -47,7 +51,7 @@ class ProductsController extends Controller
             $requestProduct['status'] = true
         );
 
-        foreach ($requestPhotos as $photo) {
+        foreach ($requestPhotos as $key => $photo) {
             $mediaService = new MediaService($photo);
             $image = $mediaService->getImageInstanceByBlob();
 
@@ -55,6 +59,11 @@ class ProductsController extends Controller
             $path = $mediaService->store($path, $image);
 
             $createdProduct->addPhoto($path);
+
+            if ($key === array_key_first($requestPhotos)) {
+                $createdProduct->preview = $path;
+                $createdProduct->save();
+            }
         }
 
         return redirect()->route('admin.products.index')->with('success', 'Товарная позиция добавлена');
@@ -62,8 +71,16 @@ class ProductsController extends Controller
 
     public function edit(Product $product)
     {
+        $productsCategories = Category::all();
+
         return view('admin.sections.products.edit', [
-            'product' => $product
+            'product' => $product,
+            'productsCategories' => $productsCategories
         ]);
+    }
+
+    public function update(Product $product, StoreRequest $request)
+    {
+
     }
 }

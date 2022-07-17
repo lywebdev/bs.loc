@@ -30,3 +30,10 @@ Breadcrumbs::for('admin.products.create', function(BreadcrumbTrail $trail) {
     $trail->parent('admin.products.index');
     $trail->push('Добавление товара', route('admin.products.create'));
 });
+Breadcrumbs::for('admin.products.edit', function(
+    BreadcrumbTrail $trail,
+    \App\Models\Product\Product $product
+) {
+    $trail->parent('admin.products.index');
+    $trail->push('Редактирование товара ' . $product->id, route('admin.products.edit', $product->id));
+});

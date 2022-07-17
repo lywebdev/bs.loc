@@ -9,10 +9,10 @@
                 <div class="col-12">
                     @include('admin.components.alert')
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Добавление товара</h4>
+                        <h4 class="mb-sm-0">Редактирование товара "{{ $product->name }}"</h4>
 
                         <div class="page-title-right">
-                            {{ \Diglactic\Breadcrumbs\Breadcrumbs::view('admin.components.breadcrumbs', 'admin.products.create') }}
+                            {{ \Diglactic\Breadcrumbs\Breadcrumbs::view('admin.components.breadcrumbs', 'admin.products.edit', $product) }}
                         </div>
                     </div>
                 </div>
@@ -23,7 +23,8 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('admin.products.store') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('admin.products.update', $product->id) }}" method="post" enctype="multipart/form-data">
+                                @method('PUT')
                                 @csrf
                                 @include('admin.sections.products.body')
                                 <div class="mb-3 row">
