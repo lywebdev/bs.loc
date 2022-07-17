@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
+Route::get('about', [\App\Http\Controllers\Pages\AboutController::class, 'index'])->name('about');
+
 Route::group([
     'prefix' => 'catalog',
     'as' => 'catalog.',

@@ -52,7 +52,6 @@ window.addEventListener('DOMContentLoaded', () => {
         $input.trigger('click');
         $input.unbind('change');
         $input.bind('change', (e) => {
-            console.log('change');
             let files = $input[0].files;
             if (files.length !== 0) {
                 for (let i = 0; i < files.length; i++) {
@@ -65,19 +64,41 @@ window.addEventListener('DOMContentLoaded', () => {
                         let hash = makeid(10);
                         let blob = reader.result;
                         let template = (`
-                            <div class="images-loader__image" data-hash="${hash}">
-                                <img src="${blob}" alt="" style="width: 250px; height: 200px;">
+                            <div class="images-loader__image"
+                                data-hash="${hash}"
+                                style="display: flex;"
+                            >
+                                <img src="${blob}" alt="" style="width: 250px; height: 200px; object-fit: cover;">
+                                <div class="actions" style="margin-left: 20px;">
+                                    <button type="button" class="btn btn-info waves-effect waves-light images-loader__remove">Удалить</button>
+                                </div>
                                 <input type="input" name="files[]" style="display: none;" value="${blob}">
                             </div>
                         `);
                         $(`.images-loader__image[data-hash="${hash}"]`).val(blob);
 
                         $imagesContainer.append(template);
+
+                        imageRemoveRebind();
                     }
                 }
+
+                $input.val(null);
             }
         });
     }
+
+    function imageRemoveRebind() {
+        let $imageRemoveBtn = $('.images-loader__remove');
+        $imageRemoveBtn.unbind('click');
+        $imageRemoveBtn.bind('click', (e) => {
+            e.preventDefault();
+            let $el = $(e.currentTarget);
+            let $image = $el.closest('.images-loader__image');
+            $image.remove();
+        });
+    }
+
 
     loadBtnInit();
 });

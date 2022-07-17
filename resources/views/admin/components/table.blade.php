@@ -28,17 +28,25 @@ data - данные таблицы, которые нужно отобразит
                     @switch ($tr[0])
                         @case('image')
                             <td>
-                                @if (strpos(mb_strtolower($row->{$tr[1]}), 'http') === false)
-                                    <img
-                                        src="{{ \Illuminate\Support\Facades\Storage::get($row->{$tr[1]}) }}"
-                                        alt=""
-                                        style="height: 150px; width: 150px"
-                                    >
+                                @if ($row->{$tr[1]} != null)
+                                    @if (strpos(mb_strtolower($row->{$tr[1]}), 'http') === false)
+                                        <img
+                                            src="{{ \Illuminate\Support\Facades\Storage::get($row->{$tr[1]}) }}"
+                                            alt=""
+                                            style="height: 150px; width: 150px; object-fit: cover;"
+                                        >
+                                    @else
+                                        <img
+                                            src="{{ $row->{$tr[1]} }}"
+                                            alt=""
+                                            style="height: 150px; width: 150px; object-fit: cover;"
+                                        >
+                                    @endif
                                 @else
                                     <img
-                                        src="{{ $row->{$tr[1]} }}"
+                                        src="{{ asset('img/tech/no_photo.jpg') }}"
                                         alt=""
-                                        style="height: 150px; width: 150px"
+                                        style="height: 150px; width: 150px; object-fit: cover;"
                                     >
                                 @endif
                             </td>
