@@ -52,16 +52,15 @@ class ProductsController extends Controller
         );
 
         foreach ($requestPhotos as $key => $photo) {
+            $path = 'uploads/products/' . $createdProduct->id . '/' . uniqid();
+
             $mediaService = new MediaService($photo);
-            $image = $mediaService->getImageInstanceByBlob();
+            $filename = $mediaService->store($path);
 
-            $path = 'uploads/products/' . $createdProduct->id;
-            $path = $mediaService->store($path, $image);
-
-            $createdProduct->addPhoto($path);
+            $createdProduct->addPhoto($filename);
 
             if ($key === array_key_first($requestPhotos)) {
-                $createdProduct->preview = $path;
+                $createdProduct->preview = $filename;
                 $createdProduct->save();
             }
         }
@@ -82,5 +81,12 @@ class ProductsController extends Controller
     public function update(Product $product, StoreRequest $request)
     {
 
+    }
+
+    public function destroy(Product $product)
+    {
+        $product->delete();
+
+        return redirect()->route('admin.products.index')->with('success', 'Товарная позиция удалена');
     }
 }

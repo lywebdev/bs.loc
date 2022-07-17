@@ -24,7 +24,7 @@
 </div>
 <div class="mb-3 row">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <label for="product[price]" class="col col-form-label">Стоимость товара</label>
             <div class="col">
                 @include('admin.components.inputs.input_number', [
@@ -34,13 +34,23 @@
                 ])
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <label for="product[old_price]" class="col col-form-label">Предыдущая стоимость товара</label>
             <div class="col">
                 @include('admin.components.inputs.input', [
                     'name' => 'product[old_price]',
                     'placeholder' => 'Предыдущая стоимость товара',
                     'value' => $product->old_price ?? ''
+                ])
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="product[quantity]" class="col col-form-label">Количество товара</label>
+            <div class="col">
+                @include('admin.components.inputs.input_number', [
+                    'name' => 'product[quantity]',
+                    'placeholder' => 'Количество товара',
+                    'value' => $product->quantity ?? 0
                 ])
             </div>
         </div>
@@ -59,11 +69,12 @@
         </div>
         <div class="col-md-6">
             <label class="form-label">Выберите производителя</label>
-            <select class="form-control select2" name="product[manufacturer_id]">
-                <option>Производитель не указан</option>
-                <option value="AK">Alaska</option>
-                <option value="HI">Hawaii</option>
-            </select>
+            @include('admin.components.inputs.select', [
+                'name' => 'product[manufacturer_id]',
+                'placeholder' => 'Производитель не указан',
+                'items' => [],
+                'selected' => $product->manufacturer_id ?? null
+            ])
         </div>
     </div>
 </div>

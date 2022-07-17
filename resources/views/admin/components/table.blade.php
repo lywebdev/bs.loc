@@ -30,11 +30,19 @@ data - данные таблицы, которые нужно отобразит
                             <td>
                                 @if ($row->{$tr[1]} != null)
                                     @if (strpos(mb_strtolower($row->{$tr[1]}), 'http') === false)
-                                        <img
-                                            src="{{ \Illuminate\Support\Facades\Storage::get($row->{$tr[1]}) }}"
-                                            alt=""
-                                            style="height: 150px; width: 150px; object-fit: cover;"
-                                        >
+                                        @if (\Illuminate\Support\Facades\Storage::exists($row->{$tr[1]}))
+                                            <img
+                                                src="{{ \Illuminate\Support\Facades\Storage::get($row->{$tr[1]}) }}"
+                                                alt=""
+                                                style="height: 150px; width: 150px; object-fit: cover;"
+                                            >
+                                        @else
+                                            <img
+                                                src="{{ asset('img/tech/no_photo.jpg') }}"
+                                                alt=""
+                                                style="height: 150px; width: 150px; object-fit: cover;"
+                                            >
+                                        @endif
                                     @else
                                         <img
                                             src="{{ $row->{$tr[1]} }}"

@@ -3,6 +3,7 @@
 namespace App\Models\Product;
 
 use App\Models\Category\Category;
+use App\Services\MediaService\MediaService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -108,5 +109,16 @@ class Product extends Model
     public function addPhoto(string $filename, ?int $sort = 0)
     {
         return Photo::new($this->id, $filename, $sort);
+    }
+
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleted(function ($product) {
+            $product->photos()->delete();
+            MediaService::deleteDir('uploads/products/' . $product->id);
+        });
     }
 }

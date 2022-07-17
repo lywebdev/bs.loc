@@ -27,14 +27,18 @@
                                 @method('PUT')
                                 @csrf
                                 @include('admin.sections.products.body')
-                                <div class="mb-3 row">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h4 class="card-title">Загрузка изображений</h4>
-                                            @include('admin.components.images_loader.images_loader')
-                                        </div>
+
+                                @if ($product->photos->count())
+                                    <div class="mb-3 row">
+                                        @foreach ($product->photos as $photo)
+                                            <div class="col-md-3">
+                                                <img class="card-img-top img-fluid" src="{{ \Illuminate\Support\Facades\Storage::disk('public')->path($photo->filename) }}" alt="Card image cap">
+                                                <button type="button" class="btn btn-danger waves-effect waves-light mt-3">Удалить</button>
+                                            </div>
+                                        @endforeach
                                     </div>
-                                </div>
+                                @endif
+
                                 <div>
                                     <button type="submit" class="btn btn-success waves-effect waves-light">Добавить</button>
                                 </div>

@@ -3,25 +3,27 @@
 namespace App\Services\MediaService;
 
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
 
 class MediaService
 {
     private $data;
+    private $fileCopy;
 
     public function __construct(string $data)
     {
-        $this->data = $data;
+        $this->fileCopy = $data;
+        $this->data = substr($data, 1 + strpos($data, ','));
     }
 
-    public function getImageInstanceByBlob()
+    public function store($path)
     {
-        return Image::make($this->data);
-    }
+        $format = explode('/', explode(';', $this->fileCopy)[0])[1];
+        $filepath = "$path.$format";
 
-    public function store($path, $file)
-    {
-        return Storage::disk('public')->put($path, $file);
+        $file = base64_decode($this->data);
+        Storage::disk('public')->put($filepath, $file);
+
+        return $filepath;
     }
 
     public function remove(?string $path)
@@ -31,5 +33,12 @@ class MediaService
         }
 
         return false;
+    }
+
+    public static function deleteDir(string $path)
+    {
+        if (Storage::disk('public')->exists($path)) {
+            Storage::disk('public')->deleteDirectory($path);
+        }
     }
 }
