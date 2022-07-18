@@ -4,7 +4,7 @@
     "/css/Pe-icon-7-stroke.css": "/css/Pe-icon-7-stroke.css?id=cf63d50e5257296dee8c74f2ffe93c30",
     "/css/font-awesome.min.css": "/css/font-awesome.min.css?id=e69d7d05463a819882aee7a48a28a2a1",
     "/css/bootstrap.min.css": "/css/bootstrap.min.css?id=b12496e1b2c69ef9cf3ef2ffab7a2b4f",
-    "/assets/css/admin.css": "/assets/css/admin.css?id=32544c28642e514673c448a8bf89f67f",
+    "/assets/css/admin.css": "/assets/css/admin.css?id=f3a1c0b44e184516c10bd13efc23168b",
     "/css/ion.rangeSlider.min.css": "/css/ion.rangeSlider.min.css?id=6659f5efc883303e11c25b33e5cdc5b1",
     "/css/magnific-popup.min.css": "/css/magnific-popup.min.css?id=360bb7764fdd10db8946ac9d91f0f33a",
     "/css/nice-select.css": "/css/nice-select.css?id=f396b7bc98f6053b6a44327ddef68e35",
@@ -108,12 +108,13 @@
     "/img/slider/slide-img/2-1-960x741.jpg": "/img/slider/slide-img/2-1-960x741.jpg?id=8a2927727e55062201700009da22cbeb",
     "/img/slider/slide-img/2-2-960x741.jpg": "/img/slider/slide-img/2-2-960x741.jpg?id=8a2927727e55062201700009da22cbeb",
     "/img/slider/slide-img/2-3-960x741.jpg": "/img/slider/slide-img/2-3-960x741.jpg?id=8a2927727e55062201700009da22cbeb",
+    "/img/tech/no_photo.jpg": "/img/tech/no_photo.jpg?id=0a0e8745c27b4c4de86ad0f8dc012ad6",
     "/img/testimonial/bg/1-1-1820x443.jpg": "/img/testimonial/bg/1-1-1820x443.jpg?id=434101e0a316eb4ab4dd649d0d110570",
     "/img/testimonial/icon/quotation.png": "/img/testimonial/icon/quotation.png?id=0c24afc96518c88c27d34a2b2f40ee8f",
     "/img/testimonial/user/1.png": "/img/testimonial/user/1.png?id=fd50ffe0eb598c569d6881342c229c30",
     "/img/testimonial/user/2.png": "/img/testimonial/user/2.png?id=fd50ffe0eb598c569d6881342c229c30",
     "/img/testimonial/user/3.png": "/img/testimonial/user/3.png?id=fd50ffe0eb598c569d6881342c229c30",
-    "/assets/css/admin.scss": "/assets/css/admin.scss?id=2a0e705801485cd8d821093d484a32d5",
+    "/assets/css/admin.scss": "/assets/css/admin.scss?id=ae91c38731023976898ad41bb876a27b",
     "/assets/css/app-dark-rtl.min.css": "/assets/css/app-dark-rtl.min.css?id=e8a77f49b7ec06d5793ab52e7bdf6baa",
     "/assets/css/app-dark-rtl.min.css.map": "/assets/css/app-dark-rtl.min.css.map?id=bb6f592b60f8a68d33038eee6cb27b78",
     "/assets/css/app-dark.css": "/assets/css/app-dark.css?id=51081ed3425873908f851bdd2686a9ea",
@@ -1109,5 +1110,6 @@
     "/assets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js": "/assets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js?id=d42be8dfc47735399529a0707d8eebc0",
     "/assets/libs/twitter-bootstrap-wizard/MIT-LICENSE.txt": "/assets/libs/twitter-bootstrap-wizard/MIT-LICENSE.txt?id=7425b8d5257df4366041c030fda1a8cb",
     "/assets/libs/twitter-bootstrap-wizard/prettify.css": "/assets/libs/twitter-bootstrap-wizard/prettify.css?id=a987f72342eeaece278982a377eca816",
-    "/assets/libs/twitter-bootstrap-wizard/prettify.js": "/assets/libs/twitter-bootstrap-wizard/prettify.js?id=1dff693b7692757c5aeee0c75979301f"
+    "/assets/libs/twitter-bootstrap-wizard/prettify.js": "/assets/libs/twitter-bootstrap-wizard/prettify.js?id=1dff693b7692757c5aeee0c75979301f",
+    "/js/admin/remove_img.js": "/js/admin/remove_img.js?id=a08b29f100becf947245e069927534a0"
 }

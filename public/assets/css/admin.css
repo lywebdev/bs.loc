@@ -13,3 +13,16 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+.gallery {
+  display: grid;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.gallery-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}

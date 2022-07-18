@@ -50,4 +50,6 @@ mix.copy('resources/img', 'public/img');
 
 // Admin template
 mix.copy('resources/assets', 'public/assets');
-mix.sass('resources/assets/css/admin.scss', 'public/assets/css/admin.css');
+
+mix.sass('resources/assets/css/admin.scss', 'public/assets/css/admin.css')
+    .minify('resources/js/admin/remove_img.js', 'public/js/admin/remove_img.js');

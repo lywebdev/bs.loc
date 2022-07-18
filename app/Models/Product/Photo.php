@@ -2,6 +2,7 @@
 
 namespace App\Models\Product;
 
+use App\Services\MediaService\MediaService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -29,5 +30,18 @@ class Photo extends Model
     public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class);
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleted(function ($photo) {
+            $productWithCurrentPhoto = Product::where('preview', $photo->filename)->first();
+            if ($productWithCurrentPhoto) {
+                $productWithCurrentPhoto->preview = null;
+                $productWithCurrentPhoto->save();
+            }
+        });
     }
 }

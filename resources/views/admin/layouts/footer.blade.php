@@ -75,5 +75,7 @@
 <script src="{{ asset('assets/js/pages/form-advanced.init.js') }}"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
 
+@yield('footer_scripts')
+
 </body>
 </html>

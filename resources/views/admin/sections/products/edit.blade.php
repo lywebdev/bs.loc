@@ -23,19 +23,29 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('admin.products.update', $product->id) }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('admin.products.update', $product->id) }}"
+                                  method="post"
+                                  enctype="multipart/form-data"
+                                  data-product-id="{{ $product->id }}"
+                            >
                                 @method('PUT')
                                 @csrf
                                 @include('admin.sections.products.body')
 
                                 @if ($product->photos->count())
                                     <div class="mb-3 row">
+                                        <div class="gallery">
                                         @foreach ($product->photos as $photo)
-                                            <div class="col-md-3">
-                                                <img class="card-img-top img-fluid" src="{{ \Illuminate\Support\Facades\Storage::disk('public')->path($photo->filename) }}" alt="Card image cap">
-                                                <button type="button" class="btn btn-danger waves-effect waves-light mt-3">Удалить</button>
+                                            <div class="gallery-item" data-photo-id="{{ $photo->id }}">
+                                                <div class="gallery-item__image">
+                                                    <img class="img-thumbnail" alt="200x200" style="width: 200px; height: 200px;" src="{{ \Illuminate\Support\Facades\Storage::url($photo->filename) }}" data-holder-rendered="true">
+                                                </div>
+                                                <div class="gallery-item__actions">
+                                                    <button type="button" class="btn btn-danger waves-effect waves-light mt-2 remove-image-btn">Удалить</button>
+                                                </div>
                                             </div>
                                         @endforeach
+                                        </div>
                                     </div>
                                 @endif
 
@@ -55,4 +65,8 @@
         </div>
         <!-- container-fluid -->
     </div>
+@endsection
+
+@section('footer_scripts')
+    <script src="{{ asset('js/admin/remove_img.js') }}"></script>
 @endsection
