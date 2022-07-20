@@ -8,8 +8,9 @@
                         <a href="tel://+00-123-456-789">+7 978 030 27 26</a>
                     </div>
 
-                    <a href="index.html" class="header-logo">
-                        <img src="img/logo/dark.png" alt="Header Logo">
+                    <a href="{{ route('home') }}" class="header-logo">
+{{--                        <img src="{{ asset('img/logo/beltstudio.png') }}" alt="Header Logo">--}}
+                        <h3 style="padding-top: 5px;">BeltStudio</h3>
                     </a>
 
                     <div class="header-right">

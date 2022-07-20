@@ -9,6 +9,19 @@ Route::resource('categories', \App\Http\Controllers\Admin\CategoriesController::
 Route::resource('products', \App\Http\Controllers\Admin\ProductsController::class);
 
 Route::group([
+    'prefix' => 'pages',
+    'as' => 'pages.'
+], function() {
+    Route::group([
+        'prefix' => 'home',
+        'as' => 'home.'
+    ], function() {
+        Route::get('main-slider', [\App\Http\Controllers\Admin\Pages\HomeController::class, 'mainSlider'])->name('mainSlider');
+        Route::post('main-slider', [\App\Http\Controllers\Admin\Pages\HomeController::class, 'mainSliderStore'])->name('mainSlider.store');
+    });
+});
+
+Route::group([
     'prefix' => 'api',
     'as' => 'api.',
 ], function() {
