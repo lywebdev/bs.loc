@@ -30,9 +30,9 @@ data - данные таблицы, которые нужно отобразит
                             <td>
                                 @if ($row->{$tr[1]} != null)
                                     @if (strpos(mb_strtolower($row->{$tr[1]}), 'http') === false)
-                                        @if (\Illuminate\Support\Facades\Storage::exists($row->{$tr[1]}))
+                                        @if (\Illuminate\Support\Facades\Storage::disk('public')->exists($row->{$tr[1]}))
                                             <img
-                                                src="{{ \Illuminate\Support\Facades\Storage::get($row->{$tr[1]}) }}"
+                                                src="{{ \Illuminate\Support\Facades\Storage::url($row->{$tr[1]}) }}"
                                                 alt=""
                                                 style="height: 150px; width: 150px; object-fit: cover;"
                                             >

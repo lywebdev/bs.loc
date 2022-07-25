@@ -25,7 +25,7 @@
                                     </ul>
                                 </li>
                                 <li class="megamenu-holder">
-                                    <a href="shop.html">Shop</a>
+                                    <a href="{{ route('catalog.index') }}">Каталог</a>
                                     <ul class="drop-menu megamenu">
                                         <li>
                                             <span class="title">Shop Layout</span>

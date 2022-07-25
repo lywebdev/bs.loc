@@ -26,14 +26,6 @@
                             <form action="{{ route('admin.products.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @include('admin.sections.products.body')
-                                <div class="mb-3 row">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h4 class="card-title">Загрузка изображений</h4>
-                                            @include('admin.components.images_loader.images_loader')
-                                        </div>
-                                    </div>
-                                </div>
                                 <div>
                                     <button type="submit" class="btn btn-success waves-effect waves-light">Добавить</button>
                                 </div>
@@ -50,4 +42,12 @@
         </div>
         <!-- container-fluid -->
     </div>
+@endsection
+
+@section('footer_scripts')
+<script>
+    $(document).ready(() => {
+        const imager = new Imager('create');
+    });
+</script>
 @endsection

@@ -88,3 +88,9 @@
         </div>
     </div>
 </div>
+
+<div class="mb-3 row">
+    <div class="row">
+        <div class="col-md-12 imager-container"></div>
+    </div>
+</div>

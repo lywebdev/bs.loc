@@ -1,0 +1,18 @@
+.imager-container {
+
+}
+
+.imager__controls {
+    margin-bottom: 15px;
+}
+
+.imager__item__actions {
+    margin-top: 10px;
+}
+
+.imager__item {
+
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}

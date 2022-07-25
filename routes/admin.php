@@ -7,6 +7,7 @@ Route::get('', [\App\Http\Controllers\Admin\HomeController::class, 'home'])->nam
 
 Route::resource('categories', \App\Http\Controllers\Admin\CategoriesController::class);
 Route::resource('products', \App\Http\Controllers\Admin\ProductsController::class);
+Route::resource('attributes', \App\Http\Controllers\Admin\AttributesController::class);
 
 Route::group([
     'prefix' => 'pages',
@@ -30,5 +31,14 @@ Route::group([
         'as' => 'products.'
     ], function() {
         Route::post('photos/{photoId}/destroy', [\App\Http\Controllers\Admin\Api\ProductsController::class, 'photoDestroy']);
+    });
+
+
+    Route::group([
+        'prefix' => 'imager',
+        'as' => 'imager.'
+    ], function() {
+        Route::post('store', [\App\Http\Controllers\Admin\Api\Imager\ImagerController::class, 'store'])->name('store');
+        Route::post('delete', [\App\Http\Controllers\Admin\Api\Imager\ImagerController::class, 'delete'])->name('delete');
     });
 });

@@ -144,6 +144,8 @@
 <!-- Footer Area End Here -->
 
 <!-- Begin Modal Area -->
+{{--Модальное окно, отвечающее за предпросмотр товара--}}
+{{--
 <div class="modal quick-view-modal fade" id="quickModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="quickModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -277,6 +279,7 @@
         </div>
     </div>
 </div>
+--}}
 <!-- Modal Area End Here -->
 
 <!-- Begin Scroll To Top -->

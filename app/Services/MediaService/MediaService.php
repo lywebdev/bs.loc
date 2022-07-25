@@ -26,7 +26,7 @@ class MediaService
         return $filepath;
     }
 
-    public function remove(?string $path)
+    public static function remove(?string $path)
     {
         if (Storage::disk('public')->exists($path)) {
             return Storage::disk('public')->delete($path);

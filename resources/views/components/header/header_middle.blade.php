@@ -20,16 +20,16 @@
                                     <i class="pe-7s-search"></i>
                                 </a>
                             </li>
-                            <li class="dropdown d-none d-lg-block">
-                                <button class="btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButton" data-bs-toggle="dropdown" aria-label="setting" aria-expanded="false">
-                                    <i class="pe-7s-users"></i>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="settingButton">
-                                    <li><a class="dropdown-item" href="my-account.html">My account</a></li>
-                                    <li><a class="dropdown-item" href="login-register.html">Login | Register</a>
-                                    </li>
-                                </ul>
-                            </li>
+{{--                            <li class="dropdown d-none d-lg-block">--}}
+{{--                                <button class="btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButton" data-bs-toggle="dropdown" aria-label="setting" aria-expanded="false">--}}
+{{--                                    <i class="pe-7s-users"></i>--}}
+{{--                                </button>--}}
+{{--                                <ul class="dropdown-menu" aria-labelledby="settingButton">--}}
+{{--                                    <li><a class="dropdown-item" href="my-account.html">My account</a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="login-register.html">Login | Register</a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
                             <li class="d-none d-lg-block">
                                 <a href="wishlist.html">
                                     <i class="pe-7s-like"></i>

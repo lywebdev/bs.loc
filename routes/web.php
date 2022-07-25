@@ -23,4 +23,6 @@ Route::group([
     'as' => 'catalog.',
 ], function() {
     Route::get('', [\App\Http\Controllers\CatalogController::class, 'index'])->name('index');
+    Route::get('product/{slug}', [\App\Http\Controllers\CatalogController::class, 'product'])->name('product');
+    Route::get('sku/{slug}', [\App\Http\Controllers\CatalogController::class, 'productBySku'])->name('productBySku');
 });

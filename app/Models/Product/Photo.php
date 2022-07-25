@@ -18,6 +18,11 @@ class Photo extends Model
     protected $guarded = [];
 
 
+    public static function getTableName()
+    {
+        return with(new static)->getTable();
+    }
+
     public function new(int $productId, string $filename, ?int $sort = 0)
     {
         return self::create([

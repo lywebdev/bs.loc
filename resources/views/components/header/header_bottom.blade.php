@@ -9,10 +9,10 @@
                                 <a href="{{ route('home') }}">BeltStudio</a>
                             </li>
                             <li class="megamenu-holder">
-                                <a href="shop.html">Shop</a>
+                                <a href="{{ route('catalog.index') }}">Каталог</a>
                                 <ul class="drop-menu megamenu">
                                     <li>
-                                        <span class="title">Shop Layout</span>
+                                        <span class="title">Популярные категории</span>
                                         <ul>
                                             <li>
                                                 <a href="shop.html">Shop Default</a>
@@ -31,52 +31,6 @@
                                             </li>
                                             <li>
                                                 <a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <span class="title">Product Style</span>
-                                        <ul>
-                                            <li>
-                                                <a href="single-product-variable.html">Single Product Variable</a>
-                                            </li>
-                                            <li>
-                                                <a href="single-product-group.html">Single Product Group</a>
-                                            </li>
-                                            <li>
-                                                <a href="single-product.html">Single Product Default</a>
-                                            </li>
-                                            <li>
-                                                <a href="single-product-affiliate.html">Single Product Affiliate</a>
-                                            </li>
-                                            <li>
-                                                <a href="single-product-sale.html">Single Product Sale</a>
-                                            </li>
-                                            <li>
-                                                <a href="single-product-sticky.html">Single Product Sticky</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <span class="title">Product Related</span>
-                                        <ul>
-                                            <li>
-                                                <a href="my-account.html">My Account</a>
-                                            </li>
-                                            <li>
-                                                <a href="login-register.html">Login | Register</a>
-                                            </li>
-                                            <li>
-                                                <a href="cart.html">Shopping Cart</a>
-                                            </li>
-                                            <li>
-                                                <a href="wishlist.html">Wishlist</a>
-                                            </li>
-                                            <li>
-                                                <a href="compare.html">Compare</a>
-                                            </li>
-                                            <li>
-                                                <a href="checkout.html">Checkout</a>
                                             </li>
                                         </ul>
                                     </li>

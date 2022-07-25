@@ -32,23 +32,6 @@
                                 @csrf
                                 @include('admin.sections.products.body')
 
-                                @if ($product->photos->count())
-                                    <div class="mb-3 row">
-                                        <div class="gallery">
-                                        @foreach ($product->photos as $photo)
-                                            <div class="gallery-item" data-photo-id="{{ $photo->id }}">
-                                                <div class="gallery-item__image">
-                                                    <img class="img-thumbnail" alt="200x200" style="width: 200px; height: 200px;" src="{{ \Illuminate\Support\Facades\Storage::url($photo->filename) }}" data-holder-rendered="true">
-                                                </div>
-                                                <div class="gallery-item__actions">
-                                                    <button type="button" class="btn btn-danger waves-effect waves-light mt-2 remove-image-btn">Удалить</button>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                        </div>
-                                    </div>
-                                @endif
-
                                 <div>
                                     <button type="submit" class="btn btn-success waves-effect waves-light">Добавить</button>
                                 </div>
@@ -69,4 +52,16 @@
 
 @section('footer_scripts')
     <script src="{{ asset('js/admin/remove_img.js') }}"></script>
+    <script>
+        $(document).ready(() => {
+            const imager = new Imager('edit', {
+                items: `{!! json_encode($product->photos) !!}`,
+                table: `App\\Models\\Product\\Photo`,
+                idColumn: `id`,
+                pathColumn: `filename`,
+                entityColumnName: 'product_id',
+                entityColumnValue: {{ $product->id }}
+            });
+        });
+    </script>
 @endsection

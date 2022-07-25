@@ -52,4 +52,8 @@ mix.copy('resources/img', 'public/img');
 mix.copy('resources/assets', 'public/assets');
 
 mix.sass('resources/assets/css/admin.scss', 'public/assets/css/admin.css')
-    .minify('resources/js/admin/remove_img.js', 'public/js/admin/remove_img.js');
+    .minify('resources/js/admin/remove_img.js', 'public/js/admin/remove_img.js')
+    .minify('resources/js/admin/repeater.js', 'public/js/admin/repeater.js')
+
+    .copy('resources/js/admin/components', 'public/js/admin/components')
+;
