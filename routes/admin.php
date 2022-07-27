@@ -41,4 +41,11 @@ Route::group([
         Route::post('store', [\App\Http\Controllers\Admin\Api\Imager\ImagerController::class, 'store'])->name('store');
         Route::post('delete', [\App\Http\Controllers\Admin\Api\Imager\ImagerController::class, 'delete'])->name('delete');
     });
+
+    Route::group([
+        'prefix' => 'attributes',
+        'as' => 'attributes.'
+    ], function() {
+        Route::post('get-attributes-by-category', [\App\Http\Controllers\Admin\Api\Attributes\AttributesController::class, 'getAttributesByCategory'])->name('getAttributesByCategory');
+    });
 });

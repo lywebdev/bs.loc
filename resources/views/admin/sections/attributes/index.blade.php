@@ -50,7 +50,7 @@
                                     'Действия'
                                 ],
                                 'tbody' => [
-                                    'name',
+                                    ['alternative', 'fullname', 'name'],
                                 ],
                                 'data' => $attributes,
                                 'route' => 'admin.attributes'

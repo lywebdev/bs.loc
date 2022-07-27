@@ -26,6 +26,11 @@
                             <form action="{{ route('admin.products.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @include('admin.sections.products.body')
+                                <div class="mb-3 row">
+                                    <div class="col-md-12">
+                                        <div class="attributer" data-type="create"></div>
+                                    </div>
+                                </div>
                                 <div>
                                     <button type="submit" class="btn btn-success waves-effect waves-light">Добавить</button>
                                 </div>
@@ -45,6 +50,7 @@
 @endsection
 
 @section('footer_scripts')
+<script src="{{ asset('js/admin/components/attributer/attributer.js') }}"></script>
 <script>
     $(document).ready(() => {
         const imager = new Imager('create');

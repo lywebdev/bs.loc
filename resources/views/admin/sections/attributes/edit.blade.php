@@ -44,3 +44,7 @@
         <!-- container-fluid -->
     </div>
 @endsection
+
+@section('footer_scripts')
+    <script src="{{ asset('js/admin/repeater.js') }}"></script>
+@endsection

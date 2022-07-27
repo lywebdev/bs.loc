@@ -15,7 +15,7 @@ class CreateAttributesTable extends Migration
     {
         Schema::create('attributes', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname')->comment('Полное название характеристики');
+            $table->string('fullname')->nullable()->comment('Полное название характеристики');
             $table->string('name')->comment('Название характеристики');
             $table->string('frontend_type')->default(\App\Models\Attribute\Attribute::TYPE_TEXT)->comment('Тип характеристики как поля html');
             $table->integer('sort')->unsigned()->default(0);

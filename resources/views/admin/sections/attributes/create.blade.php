@@ -26,29 +26,7 @@
                             <form action="{{ route('admin.attributes.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @include('admin.sections.attributes.body')
-                                <div class="mb-3 row">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="repeater">
-                                                <div class="repeater__basic">
-                                                    <div class="repeater__item">
-                                                        <div class="repeater__item__body">
-                                                            <div class="content">
-                                                                test content
-                                                            </div>
-                                                            <div class="repeater__remove-btn mb-2">Удалить блок</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="repeater__actions">
-                                                    <button type="button" class="btn btn-success waves-effect waves-light repeater__add-btn">Дубликат</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
+                                <div class="mt-4">
                                     <button type="submit" class="btn btn-success waves-effect waves-light">Добавить</button>
                                 </div>
                             </form>

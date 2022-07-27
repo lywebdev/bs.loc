@@ -5,23 +5,22 @@ namespace App\Models\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Value extends Model
+class CategoryLink extends Model
 {
     use HasFactory;
 
-    protected $table = 'attribute_values';
+    protected $table = 'attribute_categories_links';
 
     public $timestamps = false;
 
     protected $guarded = [];
 
 
-    public static function new(int $attributeId, string $value, ?int $sort = 0)
+    public static function new(int $attributeId, int $categoryId): CategoryLink
     {
         return self::create([
             'attribute_id' => $attributeId,
-            'value' => $value,
-            'sort' => $sort
+            'category_id' => $categoryId
         ]);
     }
 }

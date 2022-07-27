@@ -68,6 +68,15 @@ data - данные таблицы, которые нужно отобразит
                                 @endif
                             </td>
                         @break
+                        @case('alternative')
+                            <td>
+                                @if (!is_null($row->{$tr[1]}))
+                                    {{ $row->{$tr[1]} }}
+                                @else
+                                    {{ $row->{$tr[2]} }}
+                                @endif
+                            </td>
+                        @break
                     @endswitch
                 @else
                     <td>{{ $row->{$tr} }}</td>

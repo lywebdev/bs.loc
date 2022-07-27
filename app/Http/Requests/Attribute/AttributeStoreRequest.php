@@ -25,6 +25,7 @@ class AttributeStoreRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string'],
+            'fullname' => ['nullable', 'string'],
             'frontend_type' => ['required', 'string'],
         ];
     }
