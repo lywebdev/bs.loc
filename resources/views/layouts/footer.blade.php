@@ -6,14 +6,13 @@
                 <div class="col-lg-3">
                     <div class="footer-widget-item">
                         <div class="footer-widget-logo">
-                            <a href="index.html">
-                                <img src="img/logo/dark.png" alt="Logo">
+                            <a href="{{ route('home') }}">
+{{--                                <img src="img/logo/dark.png" alt="Logo">--}}
+                                <h3 style="padding-top: 5px;">BeltStudio</h3>
                             </a>
                         </div>
-                        <p class="footer-widget-desc">Lorem ipsum dolor sit amet, consec adipisl elit, sed do eiusmod
-                            tempor
-                            <br>
-                            incidio ut labore et dolore magna.
+                        <p class="footer-widget-desc">
+                            Интернет-магазин ремней и других аксессуаров
                         </p>
                         <div class="social-link with-border">
                             <ul>
@@ -43,27 +42,19 @@
                 </div>
                 <div class="col-lg-2 col-md-4 pt-40">
                     <div class="footer-widget-item">
-                        <h3 class="footer-widget-title">Useful Links</h3>
+                        <h3 class="footer-widget-title">Полезные ссылки</h3>
                         <ul class="footer-widget-list-item">
                             <li>
-                                <a href="#">About Pronia</a>
+                                <a href="#">Контакты</a>
                             </li>
                             <li>
-                                <a href="#">How to shop</a>
-                            </li>
-                            <li>
-                                <a href="#">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact us</a>
-                            </li>
-                            <li>
-                                <a href="#">Log in</a>
+                                <a href="#">Блог</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 pt-40">
+                    {{--
                     <div class="footer-widget-item">
                         <h3 class="footer-widget-title">My Account</h3>
                         <ul class="footer-widget-list-item">
@@ -84,6 +75,7 @@
                             </li>
                         </ul>
                     </div>
+                    --}}
                 </div>
                 <div class="col-lg-2 col-md-4 pt-40">
                     <div class="footer-widget-item">
@@ -109,21 +101,23 @@
                 </div>
                 <div class="col-lg-3 pt-40">
                     <div class="footer-contact-info">
-                        <h3 class="footer-widget-title">Got Question? Call Us</h3>
-                        <a class="number" href="tel://123-456-789">123 456 789</a>
+                        <h3 class="footer-widget-title">Мы на связи</h3>
+                        <a class="number" href="tel://+79780588210">+7 978 058 82 10</a>
                         <div class="address">
                             <ul>
-                                <li>
-                                    Your Address Goes Here
-                                </li>
+                                <li>г.Ялта ул.Киевская 6, ТЦ «Дом торговли» 3й Этаж</li>
+                                <li>г.Ялта ул.Пушкинская 23 выставочный центр «Энергетик»</li>
+                                <li>г.Ялта наб. им. Ленина 5 тц «Фонтан» 1й Этаж</li>
                             </ul>
                         </div>
                     </div>
+                    {{--
                     <div class="payment-method">
                         <a href="#">
                             <img src="img/payment/1.png" alt="Payment Method">
                         </a>
                     </div>
+                    --}}
                 </div>
             </div>
         </div>

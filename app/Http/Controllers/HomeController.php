@@ -16,6 +16,10 @@ class HomeController extends Controller
             ->limit(8)
             ->get();
 
+//        $popularProductsInOrders = Order
+//        $bestsellersProducts = Product::whereIn('id', )
+//            ->get();
+
         return view('home', compact('latestProducts'));
     }
 }

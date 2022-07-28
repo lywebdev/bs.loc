@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pronia - Plant Store Bootstrap 5 Template</title>
-    <meta name="robots" content="index, follow" />
-    <meta name="description" content="Pronia plant store bootstrap 5 template is an awesome website template for any home plant shop.">
+    <title>@yield('title')</title>
+    <meta name="description" content="Интернет-магазин ремней BeltStudio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />

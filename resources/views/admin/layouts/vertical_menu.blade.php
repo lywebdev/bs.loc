@@ -59,6 +59,35 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-list-check"></i>
+                        <span>Блог</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="ri-list-check"></i>
+                                <span>Категории</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{ route('admin.blog.categories.index') }}">Список категорий</a></li>
+                                <li><a href="{{ route('admin.blog.categories.create') }}">Добавить категорию</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="ri-list-check"></i>
+                                <span>Посты</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{ route('admin.blog.posts.index') }}">Список постов</a></li>
+                                <li><a href="{{ route('admin.blog.posts.create') }}">Добавить пост</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="mdi mdi-email-outline"></i>
                         <span>Email</span>
                     </a>

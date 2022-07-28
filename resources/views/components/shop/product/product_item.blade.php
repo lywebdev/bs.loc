@@ -58,6 +58,7 @@
                 @endif
                 ₽</span>
         </div>
+        {{--
         <div class="rating-box">
             <ul>
                 <li><i class="fa fa-star"></i></li>
@@ -67,5 +68,6 @@
                 <li><i class="fa fa-star"></i></li>
             </ul>
         </div>
+        --}}
     </div>
 </div>

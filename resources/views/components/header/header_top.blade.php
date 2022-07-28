@@ -2,10 +2,11 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-6">
-                <div class="header-top-left">
+                <div class="header-top-left" style="margin: 5px 0;">
                     <span class="pronia-offer">Добро пожаловать на beltstudio.ru</span>
                 </div>
             </div>
+            {{--
             <div class="col-6">
                 <div class="header-top-right">
                     <ul class="dropdown-wrap">
@@ -31,6 +32,7 @@
                     </ul>
                 </div>
             </div>
+            --}}
         </div>
     </div>
 </div>

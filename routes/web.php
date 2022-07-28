@@ -28,3 +28,11 @@ Route::group([
     Route::get('product/{slug}', [\App\Http\Controllers\CatalogController::class, 'product'])->name('product');
     Route::get('sku/{slug}', [\App\Http\Controllers\CatalogController::class, 'productBySku'])->name('productBySku');
 });
+
+Route::group([
+    'prefix' => 'blog',
+    'as' => 'blog.'
+], function() {
+    Route::get('', [\App\Http\Controllers\BlogController::class, 'index'])->name('index');
+    Route::get('{slug}', [\App\Http\Controllers\BlogController::class, 'show'])->name('show');
+});

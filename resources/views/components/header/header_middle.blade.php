@@ -5,7 +5,7 @@
                 <div class="header-middle-wrap position-relative">
                     <div class="header-contact d-none d-lg-flex">
                         <i class="pe-7s-call"></i>
-                        <a href="tel://+00-123-456-789">+7 978 030 27 26</a>
+                        <a href="tel://+79780588210">+7 978 058 82 10</a>
                     </div>
 
                     <a href="{{ route('home') }}" class="header-logo">

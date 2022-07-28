@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'BeltStudio - интернет-магазин ремней')
+
 @section('preloader', view('components.preloader'))
 
 @section('content')
@@ -55,28 +57,29 @@
         <div class="container">
             <div class="shipping-bg">
                 <div class="row shipping-wrap">
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-6 col-md-12">
                         <div class="shipping-item">
                             <div class="shipping-img">
                                 <img src="img/shipping/icon/car.png" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Free Shipping</h2>
-                                <p class="short-desc mb-0">Capped at $319 per order</p>
+                                <h2 class="title">Удобная доставка</h2>
+                                <p class="short-desc mb-0">Мы используем СДЭК</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+                    <div class="col-lg-6 col-md-6 mt-4 mt-md-0">
                         <div class="shipping-item">
                             <div class="shipping-img">
                                 <img src="img/shipping/icon/card.png" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Safe Payment</h2>
-                                <p class="short-desc mb-0">With our payment gateway</p>
+                                <h2 class="title">Безопасность и кофморт платежей</h2>
+                                <p class="short-desc mb-0">С помощью интегрированных сервисов</p>
                             </div>
                         </div>
                     </div>
+                    {{--
                     <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
                         <div class="shipping-item">
                             <div class="shipping-img">
@@ -88,6 +91,7 @@
                             </div>
                         </div>
                     </div>
+                    --}}
                 </div>
             </div>
         </div>
@@ -106,13 +110,13 @@
                         <li class="nav-item" role="presentation">
                             <a class="active" id="featured-tab" data-bs-toggle="tab" href="#featured" role="tab"
                                aria-controls="featured" aria-selected="true">
-                                Featured
+                                Рекомендуемые
                             </a>
                         </li>
                         <li class="nav-item" role="presentation">
                             <a id="bestseller-tab" data-bs-toggle="tab" href="#bestseller" role="tab"
                                aria-controls="bestseller" aria-selected="false">
-                                Bestseller
+                                Часто покупаемые
                             </a>
                         </li>
                         @if ($latestProducts)
@@ -1129,236 +1133,5 @@
     </div>
     <!-- Product Area End Here -->
 
-    <!-- Begin Testimonial Area -->
-    <div class="testimonial-area section-space-top-90 section-space-bottom-95">
-        <div class="container-fluid">
-            <div class="testimonial-bg" data-bg-image="img/testimonial/bg/1-1-1820x443.jpg">
-                <div class="section-title-wrap">
-                    <h2 class="section-title">What Say Client</h2>
-                    <p class="section-desc mb-0">Contrary to popular belief, Lorem Ipsum is not simply random
-                        text. It has roots in a piece of classical Latin literature
-                    </p>
-                </div>
-            </div>
-            <div class="container custom-space">
-                <div class="swiper-container testimonial-slider with-bg">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide testimonial-item">
-                            <div class="user-info mb-3">
-                                <div class="user-shape-wrap">
-                                    <div class="user-img">
-                                        <img src="img/testimonial/user/1.png" alt="User Image">
-                                    </div>
-                                </div>
-                                <div class="user-content text-charcoal">
-                                    <h4 class="user-name mb-1">Phoenix Baker</h4>
-                                    <span class="user-occupation">Client</span>
-                                </div>
-                            </div>
-                            <p class="user-comment mb-6">Lorem ipsum dolor sit amet, conse adipisic elit, sed do eiusmod
-                                tempo
-                                incididunt ut labore et dolore. magna
-                            </p>
-                        </div>
-                        <div class="swiper-slide testimonial-item">
-                            <div class="user-info mb-3">
-                                <div class="user-shape-wrap">
-                                    <div class="user-img">
-                                        <img src="img/testimonial/user/2.png" alt="User Image">
-                                    </div>
-                                </div>
-                                <div class="user-content text-charcoal">
-                                    <h4 class="user-name mb-1">Phoenix Baker</h4>
-                                    <span class="user-occupation">Client</span>
-                                </div>
-                            </div>
-                            <p class="user-comment mb-6">Lorem ipsum dolor sit amet, conse adipisic elit, sed do eiusmod
-                                tempo
-                                incididunt ut labore et dolore. magna
-                            </p>
-                        </div>
-                        <div class="swiper-slide testimonial-item">
-                            <div class="user-info mb-3">
-                                <div class="user-shape-wrap">
-                                    <div class="user-img">
-                                        <img src="img/testimonial/user/3.png" alt="User Image">
-                                    </div>
-                                </div>
-                                <div class="user-content text-charcoal">
-                                    <h4 class="user-name mb-1">Phoenix Baker</h4>
-                                    <span class="user-occupation">Client</span>
-                                </div>
-                            </div>
-                            <p class="user-comment mb-6">Lorem ipsum dolor sit amet, conse adipisic elit, sed do eiusmod
-                                tempo
-                                incididunt ut labore et dolore. magna
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination without-absolute"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial Area End Here -->
-
-    <!-- Begin Brand Area -->
-    <div class="brand-area section-space-bottom-100">
-        <div class="container">
-            <div class="brand-bg" data-bg-image="img/brand/bg/1-1170x300.jpg">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="swiper-container brand-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <a class="brand-item" href="#">
-                                        <img src="img/brand/1-1.png" alt="Brand Image">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="brand-item" href="#">
-                                        <img src="img/brand/1-2.png" alt="Brand Image">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="brand-item" href="#">
-                                        <img src="img/brand/1-3.png" alt="Brand Image">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="brand-item" href="#">
-                                        <img src="img/brand/1-4.png" alt="Brand Image">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="brand-item" href="#">
-                                        <img src="img/brand/1-5.png" alt="Brand Image">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Brand Area End Here -->
-
-    <!-- Begin Blog Area -->
-    <div class="blog-area section-space-bottom-100">
-        <div class="container">
-            <div class="section-title-wrap">
-                <h2 class="section-title mb-7">Latest Blog</h2>
-                <p class="section-desc">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-                    roots in a piece of classical Latin literature
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="swiper-container blog-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="blog-item">
-                                    <div class="blog-content">
-                                        <div class="blog-meta">
-                                            <ul>
-                                                <li class="author">
-                                                    <a href="#">By: Admin</a>
-                                                </li>
-                                                <li class="date">24 April 2021</li>
-                                            </ul>
-                                        </div>
-                                        <h2 class="title">
-                                            <a href="blog.html">There Many Variations</a>
-                                        </h2>
-                                        <p class="short-desc mb-7">Lorem ipsum dolor sit amet, consecteturl adipisl
-                                            elit,
-                                            sed do eiusmod tempor incidio ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                    <div class="blog-img img-hover-effect">
-                                        <a href="blog.html">
-                                            <img class="img-full" src="img/blog/medium-size/1-1-310x220.jpg"
-                                                 alt="Blog Image">
-                                        </a>
-                                        <div class="inner-btn-wrap">
-                                            <a class="inner-btn" href="blog.html">
-                                                <i class="pe-7s-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="blog-item">
-                                    <div class="blog-content">
-                                        <div class="blog-meta">
-                                            <ul>
-                                                <li class="author">
-                                                    <a href="#">By: Admin</a>
-                                                </li>
-                                                <li class="date">24 April 2021</li>
-                                            </ul>
-                                        </div>
-                                        <h2 class="title">
-                                            <a href="blog.html">Maecenas Laoreet Massa</a>
-                                        </h2>
-                                        <p class="short-desc mb-7">Lorem ipsum dolor sit amet, consecteturl adipisl
-                                            elit,
-                                            sed do eiusmod tempor incidio ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                    <div class="blog-img img-hover-effect">
-                                        <a href="blog.html">
-                                            <img class="img-full" src="img/blog/medium-size/1-2-310x220.jpg"
-                                                 alt="Blog Image">
-                                        </a>
-                                        <div class="inner-btn-wrap">
-                                            <a class="inner-btn" href="blog.html">
-                                                <i class="pe-7s-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="blog-item">
-                                    <div class="blog-content">
-                                        <div class="blog-meta">
-                                            <ul>
-                                                <li class="author">
-                                                    <a href="#">By: Admin</a>
-                                                </li>
-                                                <li class="date">24 April 2021</li>
-                                            </ul>
-                                        </div>
-                                        <h2 class="title">
-                                            <a href="blog.html">Aenean Vulputate Lorem</a>
-                                        </h2>
-                                        <p class="short-desc mb-7">Lorem ipsum dolor sit amet, consecteturl adipisl
-                                            elit,
-                                            sed do eiusmod tempor incidio ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                    <div class="blog-img img-hover-effect">
-                                        <a href="blog.html">
-                                            <img class="img-full" src="img/blog/medium-size/1-3-310x220.jpg"
-                                                 alt="Blog Image">
-                                        </a>
-                                        <div class="inner-btn-wrap">
-                                            <a class="inner-btn" href="blog.html">
-                                                <i class="pe-7s-link"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add Arrows -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Blog Area End Here -->
+    @include('components.fragments.blog_latest_posts', ['classes' => 'section-space-top-100'])
 @endsection

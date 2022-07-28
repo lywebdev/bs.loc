@@ -10,6 +10,14 @@ Route::resource('products', \App\Http\Controllers\Admin\ProductsController::clas
 Route::resource('attributes', \App\Http\Controllers\Admin\AttributesController::class);
 
 Route::group([
+    'prefix' => 'blog',
+    'as' => 'blog.'
+], function() {
+    Route::resource('categories', \App\Http\Controllers\Admin\Blog\CategoriesController::class);
+    Route::resource('posts', \App\Http\Controllers\Admin\Blog\PostsController::class);
+});
+
+Route::group([
     'prefix' => 'pages',
     'as' => 'pages.'
 ], function() {
