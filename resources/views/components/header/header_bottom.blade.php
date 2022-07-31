@@ -37,32 +37,24 @@
                                 </ul>
                             </li>
                             <li class="drop-holder">
-                                <a href="blog.html">Blog</a>
-                                <ul class="drop-menu">
-                                    <li>
-                                        <a href="blog-listview.html">Blog List View</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-detail.html">Blog Detail</a>
-                                    </li>
-                                </ul>
+                                <a href="{{ route('blog.index') }}">Блог</a>
                             </li>
                             <li>
-                                <a href="about.html">About Us</a>
+                                <a href="{{ route('about') }}">О нас</a>
                             </li>
-                            <li class="drop-holder">
-                                <a href="#">Pages</a>
-                                <ul class="drop-menu">
-                                    <li>
-                                        <a href="faq.html">FAQ</a>
-                                    </li>
-                                    <li>
-                                        <a href="404.html">Error 404</a>
-                                    </li>
-                                </ul>
-                            </li>
+{{--                            <li class="drop-holder">--}}
+{{--                                <a href="#">Pages</a>--}}
+{{--                                <ul class="drop-menu">--}}
+{{--                                    <li>--}}
+{{--                                        <a href="faq.html">FAQ</a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="404.html">Error 404</a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
                             <li>
-                                <a href="contact.html">Contact Us</a>
+                                <a href="{{ route('contact') }}">Контакты</a>
                             </li>
                         </ul>
                     </nav>

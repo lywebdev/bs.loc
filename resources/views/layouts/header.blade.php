@@ -6,6 +6,7 @@
     <title>@yield('title')</title>
     <meta name="description" content="Интернет-магазин ремней BeltStudio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 
@@ -23,6 +24,7 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ mix('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/custom-styles.css') }}">
 
 </head>
 

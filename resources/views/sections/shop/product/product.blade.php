@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', $product->name . ' | ' . env('APP_NAME'))
+
 @section('content')
     <!-- Begin Main Content Area  -->
     <main class="main-content">
@@ -18,28 +20,42 @@
         <div class="single-product-area section-space-top-100">
             <div class="container">
                 <div class="row">
-                    @if ($product->photos->count())
+                    @if ($product->photos->count() || $product->preview)
                     <div class="col-lg-6">
                         <div class="single-product-img">
                             <div class="swiper-container single-product-slider">
                                 <div class="swiper-wrapper">
-                                    @foreach ($product->photos as $photo)
+                                    @if (!$product->photos->count() && $product->preview)
                                         <div class="swiper-slide">
-                                            <a href="{{ \Illuminate\Support\Facades\Storage::url($photo->filename) }}" class="single-img gallery-popup">
-                                                <img class="img-full" src="{{ \Illuminate\Support\Facades\Storage::url($photo->filename) }}" alt="Изображение товара №{{ $loop->iteration }}">
+                                            <a href="{{ \Illuminate\Support\Facades\Storage::url($product->preview) }}" class="single-img gallery-popup">
+                                                <img class="img-full" src="{{ \Illuminate\Support\Facades\Storage::url($product->preview) }}" alt="Изображение товара">
                                             </a>
                                         </div>
-                                    @endforeach
+                                    @else
+                                        @foreach ($product->photos as $photo)
+                                            <div class="swiper-slide">
+                                                <a href="{{ \Illuminate\Support\Facades\Storage::url($photo->filename) }}" class="single-img gallery-popup">
+                                                    <img class="img-full" src="{{ \Illuminate\Support\Facades\Storage::url($photo->filename) }}" alt="Изображение товара №{{ $loop->iteration }}">
+                                                </a>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                             <div class="thumbs-arrow-holder">
                                 <div class="swiper-container single-product-thumbs">
                                     <div class="swiper-wrapper">
-                                        @foreach ($product->photos as $photo)
+                                        @if (!$product->photos->count() && $product->preview)
                                             <a href="#" class="swiper-slide">
-                                                <img class="img-full" src="{{ \Illuminate\Support\Facades\Storage::url($photo->filename) }}" alt="Изображение товара №{{ $loop->iteration }}">
+                                                <img class="img-full" src="{{ \Illuminate\Support\Facades\Storage::url($product->preview) }}" alt="Изображение товара">
                                             </a>
-                                        @endforeach
+                                        @else
+                                            @foreach ($product->photos as $photo)
+                                                <a href="#" class="swiper-slide">
+                                                    <img class="img-full" src="{{ \Illuminate\Support\Facades\Storage::url($photo->filename) }}" alt="Изображение товара №{{ $loop->iteration }}">
+                                                </a>
+                                            @endforeach
+                                        @endif
                                     </div>
                                     <!-- Add Arrows -->
                                     <div class=" thumbs-button-wrap d-none d-md-block">

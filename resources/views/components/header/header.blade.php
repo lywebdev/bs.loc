@@ -14,7 +14,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-search">
-                        <span class="searchbox-info">Начните вводить желамое</span>
+                        <span class="searchbox-info">Начните вводить желаемое</span>
                         <form action="#" class="hm-searchbox">
                             <input type="text" name="Search..." value="Найти..." onblur="if(this.value==''){this.value='Найти...'}" onfocus="if(this.value=='Найти...'){this.value=''}" autocomplete="off">
                             <button class="search-btn" type="submit" aria-label="searchbtn">

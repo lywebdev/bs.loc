@@ -19,6 +19,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('ho
 Route::get('test', [\App\Http\Controllers\TestController::class, 'index']);
 
 Route::get('about', [\App\Http\Controllers\Pages\AboutController::class, 'index'])->name('about');
+Route::get('contact', [\App\Http\Controllers\Pages\ContactController::class, 'index'])->name('contact');
 
 Route::group([
     'prefix' => 'catalog',
@@ -35,4 +36,28 @@ Route::group([
 ], function() {
     Route::get('', [\App\Http\Controllers\BlogController::class, 'index'])->name('index');
     Route::get('{slug}', [\App\Http\Controllers\BlogController::class, 'show'])->name('show');
+});
+
+
+// Api routes
+Route::group([
+    'prefix' => 'api',
+    'as' => 'api.'
+], function() {
+    Route::post('contact/send-message', [\App\Http\Controllers\Api\ContactController::class, 'sendMessage'])->name('contact.sendMessage');
+
+    Route::group([
+        'prefix' => 'cart',
+        'as' => 'cart.'
+    ], function() {
+        Route::post('toggle-cart-item', [\App\Http\Controllers\Api\Shop\CartController::class, 'toggleCartItem'])->name('toggleCartItem');
+
+        Route::get('items', [\App\Http\Controllers\Api\Shop\CartController::class, 'getItems'])->name('items');
+
+//        Route::get('template/minicart/items', [\App\Http\Controllers\Api\Shop\CartController::class, 'getMinicartItemsTemplate'])->name('template.minicart.items');
+        Route::get('template/minicart', [\App\Http\Controllers\Api\Shop\CartController::class, 'getMinicartTemplate'])->name('template.minicart');
+
+//        Route::get('count-items', [\App\Http\Controllers\Api\Shop\CartController::class, 'countItems'])->name('countItems');
+//        Route::post('set-cart-item', [\App\Http\Controllers\Api\Shop\CartController::class, 'setCartItem'])->name('setCartItem');
+    });
 });

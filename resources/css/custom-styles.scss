@@ -1,0 +1,31 @@
+$color-beige: #F8EEE5;
+$color-brown: #755A57;
+
+
+.contact-wrap {
+
+    .contact-list {
+
+        li {
+            i {
+                min-width: 50px;
+            }
+        }
+    }
+}
+
+
+.footer-area {
+    background: $color-beige;
+}
+
+.footer-bottom {
+
+    .copyright {
+        border-color: $color-brown !important;
+    }
+
+    .copyright-text {
+        color: $color-brown !important;
+    }
+}

@@ -3,7 +3,7 @@
 @section('content')
 <!-- Begin Main Content Area -->
 <main class="main-content">
-    <div class="breadcrumb-area breadcrumb-height" data-bg-image="assets/images/breadcrumb/bg/1-1-1919x388.jpg">
+    <div class="breadcrumb-area breadcrumb-height" data-bg-image="{{ asset('img/breadcrumb/bg/1-1-1919x388.jpg') }}">
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col-lg-12">
@@ -41,39 +41,39 @@
         <div class="container">
             <div class="shipping-bg">
                 <div class="row shipping-wrap">
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-6 col-md-6">
                         <div class="shipping-item">
                             <div class="shipping-img">
                                 <img src="{{ asset('img/shipping/icon/car.png') }}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Free Shipping</h2>
-                                <p class="short-desc mb-0">Capped at $319 per order</p>
+                                <h2 class="title">Удобная доставка</h2>
+                                <p class="short-desc mb-0">Мы используем СДЭК</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+                    <div class="col-lg-6 col-md-6 mt-4 mt-md-0">
                         <div class="shipping-item">
                             <div class="shipping-img">
                                 <img src="{{ asset('img/shipping/icon/card.png') }}" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Safe Payment</h2>
-                                <p class="short-desc mb-0">With our payment gateway</p>
+                                <h2 class="title">Безопасность и кофморт платежей</h2>
+                                <p class="short-desc mb-0">С помощью интегрированных сервисов</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
-                        <div class="shipping-item">
-                            <div class="shipping-img">
-                                <img src="assets/images/" alt="Shipping Icon">
-                            </div>
-                            <div class="shipping-content">
-                                <h2 class="title">Best Services</h2>
-                                <p class="short-desc mb-0">Friendly & Supper Services</p>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">--}}
+{{--                        <div class="shipping-item">--}}
+{{--                            <div class="shipping-img">--}}
+{{--                                <img src="assets/images/" alt="Shipping Icon">--}}
+{{--                            </div>--}}
+{{--                            <div class="shipping-content">--}}
+{{--                                <h2 class="title">Best Services</h2>--}}
+{{--                                <p class="short-desc mb-0">Friendly & Supper Services</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>

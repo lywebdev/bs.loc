@@ -1,3 +1,4 @@
+@isset($latestPosts)
 <!-- Begin Blog Area -->
 <div class="blog-area section-space-bottom-100 {{ $classes ?? '' }}">
     <div class="container">
@@ -9,99 +10,39 @@
             <div class="col-lg-12">
                 <div class="swiper-container blog-slider">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="blog-item">
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <ul>
-                                            <li class="author">
-                                                <a href="#">By: Admin</a>
-                                            </li>
-                                            <li class="date">24 April 2021</li>
-                                        </ul>
+                        @foreach ($latestPosts as $latestPost)
+                            <div class="swiper-slide">
+                                <div class="blog-item">
+                                    <div class="blog-content">
+                                        <div class="blog-meta">
+                                            <ul>
+{{--                                                <li class="author">--}}
+{{--                                                    <a href="#">By: Admin</a>--}}
+{{--                                                </li>--}}
+                                                <li class="date">{{ \Illuminate\Support\Carbon::parse($latestPost->created_at)->translatedFormat('j F Y') }}</li>
+                                            </ul>
+                                        </div>
+                                        <h2 class="title">
+                                            <a href="{{ route('blog.show', $latestPost->slug) }}">{{ $latestPost->title }}</a>
+                                        </h2>
+                                        <p class="short-desc mb-7">{!! substr($latestPost->content, 0, 200) !!}</p>
                                     </div>
-                                    <h2 class="title">
-                                        <a href="blog.html">There Many Variations</a>
-                                    </h2>
-                                    <p class="short-desc mb-7">Lorem ipsum dolor sit amet, consecteturl adipisl
-                                        elit,
-                                        sed do eiusmod tempor incidio ut labore et dolore magna aliqua.</p>
-                                </div>
-                                <div class="blog-img img-hover-effect">
-                                    <a href="blog.html">
-                                        <img class="img-full" src="img/blog/medium-size/1-1-310x220.jpg"
-                                             alt="Blog Image">
-                                    </a>
-                                    <div class="inner-btn-wrap">
-                                        <a class="inner-btn" href="blog.html">
-                                            <i class="pe-7s-link"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-item">
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <ul>
-                                            <li class="author">
-                                                <a href="#">By: Admin</a>
-                                            </li>
-                                            <li class="date">24 April 2021</li>
-                                        </ul>
-                                    </div>
-                                    <h2 class="title">
-                                        <a href="blog.html">Maecenas Laoreet Massa</a>
-                                    </h2>
-                                    <p class="short-desc mb-7">Lorem ipsum dolor sit amet, consecteturl adipisl
-                                        elit,
-                                        sed do eiusmod tempor incidio ut labore et dolore magna aliqua.</p>
-                                </div>
-                                <div class="blog-img img-hover-effect">
-                                    <a href="blog.html">
-                                        <img class="img-full" src="img/blog/medium-size/1-2-310x220.jpg"
-                                             alt="Blog Image">
-                                    </a>
-                                    <div class="inner-btn-wrap">
-                                        <a class="inner-btn" href="blog.html">
-                                            <i class="pe-7s-link"></i>
-                                        </a>
-                                    </div>
+                                    @isset($latestPost->preview)
+                                        <div class="blog-img img-hover-effect">
+                                            <a href="{{ route('blog.show', $latestPost->slug) }}">
+                                                <img class="img-full" src="{{ \Illuminate\Support\Facades\Storage::url($latestPost->preview) }}"
+                                                     alt="Blog Image">
+                                            </a>
+                                            <div class="inner-btn-wrap">
+                                                <a class="inner-btn" href="{{ route('blog.show', $latestPost->slug) }}">
+                                                    <i class="pe-7s-link"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    @endisset
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-item">
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <ul>
-                                            <li class="author">
-                                                <a href="#">By: Admin</a>
-                                            </li>
-                                            <li class="date">24 April 2021</li>
-                                        </ul>
-                                    </div>
-                                    <h2 class="title">
-                                        <a href="blog.html">Aenean Vulputate Lorem</a>
-                                    </h2>
-                                    <p class="short-desc mb-7">Lorem ipsum dolor sit amet, consecteturl adipisl
-                                        elit,
-                                        sed do eiusmod tempor incidio ut labore et dolore magna aliqua.</p>
-                                </div>
-                                <div class="blog-img img-hover-effect">
-                                    <a href="blog.html">
-                                        <img class="img-full" src="img/blog/medium-size/1-3-310x220.jpg"
-                                             alt="Blog Image">
-                                    </a>
-                                    <div class="inner-btn-wrap">
-                                        <a class="inner-btn" href="blog.html">
-                                            <i class="pe-7s-link"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <!-- Add Arrows -->
                     <div class="swiper-button-next"></div>
@@ -112,3 +53,4 @@
     </div>
 </div>
 <!-- Blog Area End Here -->
+@endisset

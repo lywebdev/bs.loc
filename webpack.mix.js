@@ -41,7 +41,10 @@ mix.sass('resources/css/styles/style.scss', 'public/css/styles.css')
     .minify('resources/js/plugins/mailchimp-ajax.js', 'public/js/plugins/mailchimp-ajax.js')
     .minify('resources/js/plugins/jquery.counterup.js', 'public/js/plugins/jquery.counterup.js')
 
+    mix.sass('resources/css/custom-styles.scss', 'public/css/custom-styles.css')
+
     .minify('resources/js/main.js', 'public/js/main.js')
+    .minify('resources/js/index.js', 'public/js/index.js')
 
     .version();
 

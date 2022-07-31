@@ -5,7 +5,7 @@
                 <div class="header-middle-wrap position-relative">
                     <div class="header-contact d-none d-lg-flex">
                         <i class="pe-7s-call"></i>
-                        <a href="tel://+79780588210">+7 978 058 82 10</a>
+                        <a href="tel:+79780588210">+7 978 058 82 10</a>
                     </div>
 
                     <a href="{{ route('home') }}" class="header-logo">
@@ -30,15 +30,15 @@
 {{--                                    </li>--}}
 {{--                                </ul>--}}
 {{--                            </li>--}}
-                            <li class="d-none d-lg-block">
-                                <a href="wishlist.html">
-                                    <i class="pe-7s-like"></i>
-                                </a>
-                            </li>
+{{--                            <li class="d-none d-lg-block">--}}
+{{--                                <a href="wishlist.html">--}}
+{{--                                    <i class="pe-7s-like"></i>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                             <li class="minicart-wrap me-3 me-lg-0">
                                 <a href="#miniCart" class="minicart-btn toolbar-btn">
                                     <i class="pe-7s-shopbag"></i>
-                                    <span class="quantity">3</span>
+                                    <span class="quantity">{{ $share_cartItemsCount }}</span>
                                 </a>
                             </li>
                             <li class="mobile-menu_wrap d-block d-lg-none">

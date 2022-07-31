@@ -1,5 +1,5 @@
 <!-- Begin Footer Area -->
-<div class="footer-area" data-bg-image="img/footer/bg/1-1920x465.jpg">
+<div class="footer-area" {{--data-bg-image="{{ asset('img/footer/bg/1-1920x465.jpg') }}"--}}>
     <div class="footer-top section-space-top-100 pb-60">
         <div class="container">
             <div class="row">
@@ -17,25 +17,25 @@
                         <div class="social-link with-border">
                             <ul>
                                 <li>
-                                    <a href="#" data-tippy="Facebook" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                        <i class="fa fa-facebook"></i>
+                                    <a href="{{ env('SOCIAL_OK') }}" target="_blank" data-tippy="Одноклассники" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                        <i class="fa fa-odnoklassniki" aria-hidden="true"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" data-tippy="Twitter" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                        <i class="fa fa-twitter"></i>
+                                    <a href="{{ env('SOCIAL_VK') }}" target="_blank" data-tippy="Вконтакте" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                                        <i class="fa fa-vk" aria-hidden="true"></i>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#" data-tippy="Pinterest" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                        <i class="fa fa-pinterest"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" data-tippy="Dribbble" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                        <i class="fa fa-dribbble"></i>
-                                    </a>
-                                </li>
+{{--                                <li>--}}
+{{--                                    <a href="#" data-tippy="Pinterest" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">--}}
+{{--                                        <i class="fa fa-pinterest"></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="#" data-tippy="Dribbble" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">--}}
+{{--                                        <i class="fa fa-dribbble"></i>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
                             </ul>
                         </div>
                     </div>
@@ -45,10 +45,10 @@
                         <h3 class="footer-widget-title">Полезные ссылки</h3>
                         <ul class="footer-widget-list-item">
                             <li>
-                                <a href="#">Контакты</a>
+                                <a href="{{ route('contact') }}">Контакты</a>
                             </li>
                             <li>
-                                <a href="#">Блог</a>
+                                <a href="{{ route('blog.index') }}">Блог</a>
                             </li>
                         </ul>
                     </div>
@@ -127,8 +127,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copyright">
-                                <span class="copyright-text">© 2021 Pronia Made with <i class="fa fa-heart text-danger"></i> by
-                            <a href="https://hasthemes.com/" rel="noopener" target="_blank">HasThemes</a> </span>
+                        <span class="copyright-text">© {{ date('Y') . ' ' . env('APP_NAME') }} <i class="fa fa-heart text-danger"></i></span>
+{{--                                by <a href="https://hasthemes.com/" rel="noopener" target="_blank">HasThemes</a> </span>--}}
                     </div>
                 </div>
             </div>
@@ -305,6 +305,9 @@
 
 <!--Main JS (Common Activation Codes)-->
 <script src="{{ mix('js/main.js') }}"></script>
+<script src="{{ mix('js/index.js') }}"></script>
+
+@yield('footer_scripts')
 
 </body>
 </html>

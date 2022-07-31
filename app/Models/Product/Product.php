@@ -88,6 +88,18 @@ class Product extends Model
         ]);
     }
 
+
+    public function isAvailableInStock()
+    {
+        return $this->availability === self::AVAILABILITY_IN_STOCK;
+    }
+
+    public function isAvailable(int $productQuantity = 1)
+    {
+        return $this->isAvailableInStock() && $this->quantity >= $productQuantity && $this->status == self::STATUS_ACTIVE;
+    }
+
+
     // Relations
 
     /**

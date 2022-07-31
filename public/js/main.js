@@ -2,7 +2,7 @@
     ('use strict');
 
     /*----------------------------------------*/
-    /*  Preloader  
+    /*  Preloader
 /*----------------------------------------*/
     var windows = $(window);
     windows.on('load', function () {
@@ -806,7 +806,7 @@
     }
 
     /*----------------------------------------*/
-    /*  ion Range Slider 
+    /*  ion Range Slider
 /*----------------------------------------*/
     $('.pronia-range-slider').ionRangeSlider({
         prefix: '$',
@@ -828,6 +828,9 @@
             var formData = $(form).serialize();
             // Submit the form using AJAX.
             $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 type: 'POST',
                 url: $(form).attr('action'),
                 data: formData,
@@ -838,7 +841,7 @@
                     $(formMessages).addClass('success');
 
                     // Set the message text.
-                    $(formMessages).text(response);
+                    $(formMessages).text(response.message);
 
                     // Clear the form.
                     $('#contact-form input,#contact-form textarea').val('');
@@ -849,11 +852,11 @@
                     $(formMessages).addClass('error');
 
                     // Set the message text.
-                    if (data.responseText !== '') {
-                        $(formMessages).text(data.responseText);
+                    if (data.message !== '') {
+                        $(formMessages).text(data.responseJSON.message);
                     } else {
                         $(formMessages).text(
-                            'Oops! An error occured and your message could not be sent.'
+                            'Не удалось отправить сообщение, возникла проблема на стороне сервера'
                         );
                     }
                 });

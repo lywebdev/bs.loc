@@ -8,17 +8,65 @@ use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
-    public function index()
+    private $filtersSettings;
+
+    private const FILTER_PRICE = 'price_filter';
+
+
+    protected function sort(Request $request, $products)
+    {
+        $filtersSettings = [];
+
+        // Фильтр поиска
+        if ($request->filled('search')) {
+            $products->whereIn('id',
+                Product::where('name', 'LIKE', "%{$request->search}%")
+                    ->orWhere('vendor_code', 'LIKE', "%{$request->search}%")
+                    ->get()
+                    ->pluck('id')
+            );
+        }
+
+        $minPrice = $products->min('price') ?? 0;
+        $maxPrice = $products->max('price') ?? 0;
+        $filtersSettings[self::FILTER_PRICE] = [
+            'min' => $minPrice,
+            'max' => $maxPrice,
+            'selected_min' => $minPrice,
+            'selected_max' => $maxPrice
+        ];
+
+        // Фильтр стоимости
+        if ($request->filled(self::FILTER_PRICE)) {
+            $values = explode(';', $request->{self::FILTER_PRICE});
+            $min = $values[0];
+            $max = $values[1];
+
+            $filtersSettings[self::FILTER_PRICE]['selected_min'] = $min;
+            $filtersSettings[self::FILTER_PRICE]['selected_max'] = $max;
+        }
+
+
+        $this->filtersSettings = $filtersSettings;
+    }
+
+    public function index(Request $request)
     {
         $categories = Category::with(['products' => function($productsQuery) {
             $productsQuery->select('id', 'category_id');
             $productsQuery->count();
         }])->get();
         $products = Product::orderBy('id', 'desc')
-            ->with('photos')
-            ->paginate(12);
+            ->with('photos');
 
-        return view('sections.shop.catalog.catalog', compact('products', 'categories'));
+        $this->sort($request, $products);
+        $products = $products->paginate(12)->withQueryString();
+
+        return view('sections.shop.catalog.catalog', [
+            'products' => $products,
+            'categories' => $categories,
+            'filterSettings' => $this->filtersSettings
+        ]);
     }
 
     public function product(string $slug)

@@ -6,8 +6,9 @@
             </div>
             <div class="header-contact offcanvas-contact">
                 <i class="pe-7s-call"></i>
-                <a href="tel://+00-123-456-789">+00 123 456 789</a>
+                <a href="tel:+79780588210">+7 978 058 82 10</a>
             </div>
+            {{--
             <div class="offcanvas-user-info">
                 <ul class="dropdown-wrap">
                     <li class="dropdown dropdown-left">
@@ -45,33 +46,21 @@
                     </li>
                 </ul>
             </div>
-            <div class="offcanvas-menu_area">
+            --}}
+            <div class="offcanvas-menu_area mt-4">
                 <nav class="offcanvas-navigation">
                     <ul class="mobile-menu">
                         <li class="menu-item-has-children">
-                            <a href="#">
-                                            <span class="mm-text">Home
-                                        <i class="pe-7s-angle-down"></i>
-                                    </span>
+                            <a href="{{ route('home') }}">
+                                <span class="mm-text">BeltStudio
+                                </span>
                             </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="index.html">
-                                        <span class="mm-text">Home One</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index-2.html">
-                                        <span class="mm-text">Home Two</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#">
-                                            <span class="mm-text">Shop
-                                        <i class="pe-7s-angle-down"></i>
-                                    </span>
+                            <a href="{{ route('catalog.index') }}">
+                                <span class="mm-text">Каталог
+                                    <i class="pe-7s-angle-down"></i>
+                                </span>
                             </a>
                             <ul class="sub-menu">
                                 <li class="menu-item-has-children">
@@ -194,11 +183,12 @@
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#">
-                                            <span class="mm-text">Blog
-                                        <i class="pe-7s-angle-down"></i>
-                                    </span>
+                            <a href="{{ route('blog.index') }}">
+                                <span class="mm-text">Блог
+{{--                                    <i class="pe-7s-angle-down"></i>--}}
+                                </span>
                             </a>
+                            {{--
                             <ul class="sub-menu">
                                 <li class="menu-item-has-children">
                                     <a href="#">
@@ -221,34 +211,16 @@
                                     </ul>
                                 </li>
                             </ul>
+                            --}}
                         </li>
                         <li>
-                            <a href="about.html">
-                                <span class="mm-text">About Us</span>
+                            <a href="{{ route('about') }}">
+                                <span class="mm-text">О нас</span>
                             </a>
-                        </li>
-                        <li class="menu-item-has-children">
-                            <a href="#">
-                                            <span class="mm-text">Pages
-                                        <i class="pe-7s-angle-down"></i>
-                                    </span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="faq.html">
-                                        <span class="mm-text">Frequently Questions</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="404.html">
-                                        <span class="mm-text">Error 404</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
-                            <a href="contact.html">
-                                <span class="mm-text">Contact</span>
+                            <a href="{{ route('contact') }}">
+                                <span class="mm-text">Контакты</span>
                             </a>
                         </li>
                     </ul>

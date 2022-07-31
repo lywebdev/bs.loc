@@ -59,7 +59,7 @@
                                     'Действия'
                                 ],
                                 'tbody' => [
-                                    'name',
+                                    'title',
                                     ['relation', 'category', 'name']
                                 ],
                                 'data' => $posts,

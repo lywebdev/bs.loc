@@ -28,7 +28,7 @@
                                 @csrf
                                 @include('admin.sections.blog.categories.body')
                                 <div>
-                                    <button type="submit" class="btn btn-success waves-effect waves-light">Добавить</button>
+                                    <button type="submit" class="btn btn-success waves-effect waves-light">Сохранить</button>
                                 </div>
                             </form>
                         </div>

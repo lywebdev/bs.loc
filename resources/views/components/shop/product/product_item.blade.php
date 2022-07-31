@@ -1,4 +1,4 @@
-<div class="product-item {{ $classes ?? '' }}">
+<div class="product-item {{ $classes ?? '' }} ajax" data-product-id="{{ $product->id }}">
     <div class="product-img">
         <a href="{{ route('catalog.product', $product->slug) }}">
             @if ($product->preview)
@@ -39,7 +39,7 @@
 {{--                        <i class="pe-7s-look"></i>--}}
 {{--                    </a>--}}
 {{--                </li>--}}
-                <li>
+                <li class="add-product-to-cart">
                     <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
                         <i class="pe-7s-cart"></i>
                     </a>

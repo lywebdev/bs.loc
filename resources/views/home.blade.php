@@ -21,7 +21,7 @@
                                         <h2 class="title">Новая Коллекция</h2>
                                         <p class="short-desc">Переходите и приобретайте по заниженным ценам</p>
                                         <div class="btn-wrap">
-                                            <a class="btn btn-custom-size xl-size btn-pronia-primary" href="shop.html">Купить
+                                            <a class="btn btn-custom-size xl-size btn-pronia-primary" href="{{ route('catalog.index') }}">Купить
                                                 сейчас</a>
                                         </div>
                                     </div>

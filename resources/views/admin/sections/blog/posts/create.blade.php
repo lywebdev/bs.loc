@@ -43,3 +43,16 @@
         <!-- container-fluid -->
     </div>
 @endsection
+
+@section('footer_scripts')
+<!--tinymce js-->
+<script src="{{ asset('assets/libs/tinymce/tinymce.min.js') }}"></script>
+<script>
+    $(document).ready((e) => {
+        tinymce.init({
+            selector: 'textarea#post_editor',
+            height: 300,
+        });
+    });
+</script>
+@endsection

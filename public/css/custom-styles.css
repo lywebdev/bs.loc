@@ -1,0 +1,14 @@
+.contact-wrap .contact-list li i {
+  min-width: 50px;
+}
+
+.footer-area {
+  background: #F8EEE5;
+}
+
+.footer-bottom .copyright {
+  border-color: #755A57 !important;
+}
+.footer-bottom .copyright-text {
+  color: #755A57 !important;
+}
