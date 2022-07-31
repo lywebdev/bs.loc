@@ -70,7 +70,6 @@ window.updateCart = () => {
     let $minicartMenu = $('#miniCart');
     let $minicartMenuList = $minicartMenu.find('.minicart-list');
 
-
     function rebindCartActions() {
         $menuClose = $('.button-close');
         $menuClose.unbind('click');
@@ -107,7 +106,6 @@ window.updateCart = () => {
         });
     }
 
-
     function getCartItems() {
         return $.ajax({
             headers: {
@@ -138,6 +136,7 @@ window.updateCart = () => {
                 success: (response) => {
                     let template = response.data.template;
                     $minicartMenu.find('.offcanvas-body').html(template);
+                    $minicartQuantity.text(cartItems.length);
 
                     rebindCartActions();
                     // reinit cart actions

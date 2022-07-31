@@ -31,6 +31,12 @@ Breadcrumbs::for('catalog.product', function(BreadcrumbTrail $trail, \App\Models
     $trail->push($product->name, route('catalog.product', $product->slug));
 });
 
+// Cart
+Breadcrumbs::for('cart.index', function(BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Корзина', route('cart.index'));
+});
+
 // Blog
 Breadcrumbs::for('blog.index', function(BreadcrumbTrail $trail) {
     $trail->parent('home');

@@ -38,6 +38,12 @@ Route::group([
     Route::get('{slug}', [\App\Http\Controllers\BlogController::class, 'show'])->name('show');
 });
 
+Route::group([
+    'prefix' => 'cart',
+    'as' => 'cart.'
+], function() {
+    Route::get('', [\App\Http\Controllers\CartController::class, 'index'])->name('index');
+});
 
 // Api routes
 Route::group([
