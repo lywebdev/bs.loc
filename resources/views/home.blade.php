@@ -136,9 +136,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-1-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-1-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-2-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-2-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -191,9 +191,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-2-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-2-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-3-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-3-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -246,9 +246,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-3-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-3-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-4-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-4-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -301,9 +301,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-4-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-4-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-5-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-5-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -356,9 +356,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-5-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-5-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-6-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-6-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -411,9 +411,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-6-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-6-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-7-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-7-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -466,9 +466,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-7-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-7-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-8-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-8-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -521,9 +521,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-8-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-8-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-1-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-1-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -580,9 +580,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-5-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-5-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-6-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-6-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -635,9 +635,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-6-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-6-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-7-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-7-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -690,9 +690,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-7-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-7-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-8-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-8-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -745,9 +745,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-8-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-8-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-1-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-1-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -800,9 +800,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-1-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-1-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-2-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-2-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -855,9 +855,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-2-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-2-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-3-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-3-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -910,9 +910,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-3-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-3-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-4-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-4-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -965,9 +965,9 @@
                                     <div class="product-item">
                                         <div class="product-img">
                                             <a href="shop.html">
-                                                <img class="primary-img" src="img/product/medium-size/1-4-270x300.jpg"
+                                                <img class="primary-img" src="{{ asset('img/product/medium-size/1-4-270x300.jpg') }}"
                                                      alt="Product Images">
-                                                <img class="secondary-img" src="img/product/medium-size/1-5-270x300.jpg"
+                                                <img class="secondary-img" src="{{ asset('img/product/medium-size/1-5-270x300.jpg') }}"
                                                      alt="Product Images">
                                             </a>
                                             <div class="product-add-action">
@@ -1045,7 +1045,7 @@
                 <div class="col-lg-8">
                     <div class="banner-item img-hover-effect">
                         <div class="banner-img">
-                            <img src="img/banner/1-1-770x300.jpg" alt="Banner Image">
+                            <img src="{{ asset('img/banner/1-1-770x300.jpg') }}" alt="Banner Image">
                         </div>
                         <div class="banner-content text-position-left">
                             <span class="collection">Collection Of Cactus</span>
@@ -1060,7 +1060,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="banner-item img-hover-effect">
                         <div class="banner-img">
-                            <img src="img/banner/1-2-370x300.jpg" alt="Banner Image">
+                            <img src="{{ asset('img/banner/1-2-370x300.jpg') }}" alt="Banner Image">
                         </div>
                         <div class="banner-content text-position-center">
                             <span class="collection">New Collection</span>
@@ -1075,7 +1075,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="banner-item img-hover-effect">
                         <div class="banner-img">
-                            <img src="img/banner/1-3-370x300.jpg" alt="Banner Image">
+                            <img src="{{ asset('img/banner/1-3-370x300.jpg') }}" alt="Banner Image">
                         </div>
                         <div class="banner-content text-position-center">
                             <span class="collection">New Collection</span>
@@ -1090,7 +1090,7 @@
                 <div class="col-lg-8">
                     <div class="banner-item img-hover-effect">
                         <div class="banner-img">
-                            <img src="img/banner/1-4-770x300.jpg" alt="Banner Image">
+                            <img src="{{ asset('img/banner/1-4-770x300.jpg') }}" alt="Banner Image">
                         </div>
                         <div class="banner-content text-position-left">
                             <span class="collection">Collection Of Cactus</span>

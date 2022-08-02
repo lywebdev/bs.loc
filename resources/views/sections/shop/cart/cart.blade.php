@@ -58,19 +58,20 @@
                                                     </a>
                                                 </td>
                                                 <td class="product-name"><a href="{{ route('catalog.product', $cartItem->slug) }}">{{ $cartItem->name }}</a></td>
-                                                <td class="product-price"><span class="amount">{{ $cartItem->price }}&nbsp;₽</span></td>
+                                                <td class="product-price"><span class="amount">{{ $cartItem->product->price }}&nbsp;₽</span></td>
                                                 <td class="quantity">
                                                     <div class="cart-plus-minus">
-                                                        <input class="cart-plus-minus-box" value="{{ $cartItem->quantity }}" type="text">
-                                                        <div class="dec qtybutton">
-                                                            <i class="fa fa-minus"></i>
-                                                        </div>
-                                                        <div class="inc qtybutton">
-                                                            <i class="fa fa-plus"></i>
-                                                        </div>
+                                                        <span>{{ $cartItem->quantity }}</span>
+{{--                                                        <input class="cart-plus-minus-box" value="{{ $cartItem->quantity }}" type="text">--}}
+{{--                                                        <div class="dec qtybutton">--}}
+{{--                                                            <i class="fa fa-minus"></i>--}}
+{{--                                                        </div>--}}
+{{--                                                        <div class="inc qtybutton">--}}
+{{--                                                            <i class="fa fa-plus"></i>--}}
+{{--                                                        </div>--}}
                                                     </div>
                                                 </td>
-                                                <td class="product-subtotal"><span class="amount">{{ $cartItem->price }}&nbsp;₽</span></td>
+                                                <td class="product-subtotal"><span class="amount">{{ $cartItem->price * $cartItem->quantity }}&nbsp;₽</span></td>
                                             </tr>
                                         @endforeach
                                         </tbody>
@@ -83,9 +84,9 @@
 {{--                                                <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">--}}
 {{--                                                <input class="button mt-xxs-30" name="apply_coupon" value="Apply coupon" type="submit">--}}
 {{--                                            </div>--}}
-                                            <div class="coupon2">
-                                                <input class="button" name="update_cart" value="Обновить корзину" type="submit">
-                                            </div>
+{{--                                            <div class="coupon2">--}}
+{{--                                                <input class="button" name="update_cart" value="Обновить корзину" type="submit">--}}
+{{--                                            </div>--}}
                                         </div>
                                     </div>
                                 </div>
@@ -95,9 +96,9 @@
                                             <h2>Итого</h2>
                                             <ul>
 {{--                                                <li>Subtotal <span>$79.35</span></li>--}}
-                                                <li>Общая стоимость <span>79.35&nbsp;₽</span></li>
+                                                <li>Общая стоимость <span>{{ $totalCost }}&nbsp;₽</span></li>
                                             </ul>
-                                            <a href="#">Proceed to checkout</a>
+                                            <a href="{{ route('checkoutForm') }}">Оформить заказ</a>
                                         </div>
                                     </div>
                                 </div>

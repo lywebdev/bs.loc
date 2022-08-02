@@ -3,16 +3,17 @@
 namespace App\Models\Category;
 
 use App\Models\Product\Product;
+use App\Services\SlugService\SlugService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
+use Kalnoy\Nestedset\NodeTrait;
+
 
 class Category extends Model
 {
     use HasFactory;
-    use HasSlug;
+    use NodeTrait;
 
     protected $table = 'categories';
 
@@ -20,23 +21,16 @@ class Category extends Model
 
     protected $guarded = [];
 
-
-    public function getSlugOptions(): SlugOptions
-    {
-        return SlugOptions::create()
-            ->generateSlugsFrom('name')
-            ->saveSlugsTo('slug');
-    }
-
-
     /**
      * @param string $name Название категории
+     * @param int|null $parentId
      * @return Category
      */
-    public static function new(string $name): Category
+    public static function new(string $name, ?int $parentId = null): Category
     {
         return self::create([
-            'name' => $name
+            'name' => $name,
+            'parent_id' => $parentId
         ]);
     }
 
@@ -50,5 +44,15 @@ class Category extends Model
     public function products(): HasMany
     {
         return $this->hasMany(Product::class);
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($category) {
+            $slugService = new SlugService();
+            $category->slug = $slugService->createSlug($category->name, '-', self::class, 'slug', $category->parent_id);
+        });
     }
 }

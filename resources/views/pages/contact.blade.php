@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="contact-wrap">
-                            <div class="contact-info text-white" data-bg-image="{{ asset('img/contact/1-1-370x500.jpg') }}">
+                            <div class="contact-info text-white" {{--data-bg-image="{{ asset('img/contact/1-1-370x500.jpg') }}"--}}>
                                 <h2 class="contact-title">Контактная информация:</h2>
                                 <p class="contact-desc">Мы работаем с 9 до 22</p>
                                 <ul class="contact-list">

@@ -14,6 +14,13 @@ $color-brown: #755A57;
     }
 }
 
+.contact-form-area {
+
+    .contact-info {
+        background: #8b8a89;
+    }
+}
+
 
 .footer-area {
     background: $color-beige;
@@ -28,4 +35,9 @@ $color-brown: #755A57;
     .copyright-text {
         color: $color-brown !important;
     }
+}
+
+
+.breadcrumb-area {
+    background: $color-beige;
 }

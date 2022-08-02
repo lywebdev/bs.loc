@@ -1,5 +1,5 @@
 <div class="sidebar-area">
-    <form action="{{ route('catalog.index') }}" method="get">
+    <form action="{{ \Illuminate\Support\Facades\Request::url() }}" method="get">
         <div class="widgets-searchbox">
             <div id="widgets-searchbox">
                 <input class="input-field"

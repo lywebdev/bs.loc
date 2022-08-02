@@ -36,7 +36,13 @@ class CartController extends BaseController
         if (!$productInDb) {
             return $this->sendError('Товар с указанным идентификатором не найден');
         }
-        if (!$productInDb->isAvailable()) {
+        if (!$productInDb->isAvailable($quantity)) {
+            if ($productInDb->quantity < $quantity) {
+                return $this->sendError('В наличии нет нужного количества товара', [
+                    'max_quantity' => (int) $productInDb->quantity
+                ]);
+            }
+
             return $this->sendError('Не удалось добавить товар в корзине. Возможно он не в наличии, или недоступен для покупки');
         }
 
@@ -45,7 +51,7 @@ class CartController extends BaseController
         $productInCart = $cartItems->where('product_id', $productId)->first();
         if ($productInCart) {
             // Товар уже есть в корзине, не меняя индекс - меняем значение количества
-            $productInCart->quantity = $quantity;
+            $productInCart->quantity = (int) $quantity;
 
             $index = $cartItems->search($productInCart);
             $cartItems->toArray()[$index] = $productInCart;
@@ -54,7 +60,7 @@ class CartController extends BaseController
             // Товара нет в корзине - нужно добавить его туда
             $cartProduct = [
                 'product_id' => $productId,
-                'quantity' => $quantity,
+                'quantity' => (int) $quantity,
                 'name' => $productInDb->name,
                 'preview' => $productInDb->preview ?? null,
                 'price' => $productInDb->price,

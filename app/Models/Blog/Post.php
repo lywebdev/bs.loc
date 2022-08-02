@@ -19,6 +19,7 @@ class Post extends Model
 
     protected $guarded = [];
 
+    public const STATUS_ACTIVE = true;
 
     public function getSlugOptions(): SlugOptions
     {
@@ -30,7 +31,7 @@ class Post extends Model
     public static function new(
         string $title,
         string $content,
-        bool $status = true,
+        bool $status = self::STATUS_ACTIVE,
         ?int $categoryId,
         ?string $seoKeywords,
         ?string $seoDescription,

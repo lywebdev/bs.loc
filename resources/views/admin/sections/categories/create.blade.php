@@ -34,6 +34,17 @@
                                         ])
                                     </div>
                                 </div>
+                                <div class="mb-3 row">
+                                    <label for="example-text-input" class="col-md-2 col-form-label">Выберите категорию</label>
+                                    <div class="col-md-10">
+                                        @include('admin.components.inputs.select', [
+                                            'name' => 'category[parent_id]',
+                                            'placeholder' => 'Категория не указана',
+                                            'items' => $categories,
+                                            'selected' => $category->parent_id ?? null
+                                        ])
+                                    </div>
+                                </div>
                                 <div>
                                     <button type="submit" class="btn btn-success waves-effect waves-light">Добавить</button>
                                 </div>

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Cookie;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -97,6 +98,13 @@ class Product extends Model
     public function isAvailable(int $productQuantity = 1)
     {
         return $this->isAvailableInStock() && $this->quantity >= $productQuantity && $this->status == self::STATUS_ACTIVE;
+    }
+
+    public function inCart()
+    {
+        $cartItems = collect(json_decode(Cookie::get('cart')));
+
+        return !is_null($cartItems->where('product_id', $this->id)->first()) ? true : false;
     }
 
 

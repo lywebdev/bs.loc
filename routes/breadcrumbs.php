@@ -21,6 +21,13 @@ Breadcrumbs::for('contact', function(BreadcrumbTrail $trail) {
     $trail->push('Контакты', route('contact'));
 });
 
+// Оформление заказа
+Breadcrumbs::for('checkout', function(BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Корзина', route('cart.index'));
+    $trail->push('Оформление заказа', route('checkoutForm'));
+});
+
 // Catalog
 Breadcrumbs::for('catalog.index', function(BreadcrumbTrail $trail) {
     $trail->parent('home');

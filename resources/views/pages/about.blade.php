@@ -87,7 +87,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="banner-boxshadow">
-                            <div class="banner-item" data-bg-image="assets/images/banner/3-1-1208x542.jpg">
+                            <div class="banner-item" data-bg-image="{{ asset('img/banner/3-1-1208x542.jpg') }}">
                                 <div class="popup-btn">
                                     <a class="popup-vimeo wave-btn" href="https://player.vimeo.com/video/172601404?autoplay=1">
                                         <span></span>
@@ -164,7 +164,7 @@
                 <div class="col-lg-3 col-sm-6 pt-sm-5">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="assets/images/about/team/1-1-270x270.png" alt="Team Member">
+                            <img src="{{ asset('img/about/team/1-1-270x270.png') }}" alt="Team Member">
                             <div class="inner-content">
                                 <h2 class="team-member-name">Micheal Murphy</h2>
                                 <span class="occupation">Sales man</span>
@@ -197,7 +197,7 @@
                 <div class="col-lg-3 col-sm-6 pt-5 pt-sm-0">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="assets/images/about/team/1-2-270x270.png" alt="Team Member">
+                            <img src="{{ asset('img/about/team/1-2-270x270.png') }}" alt="Team Member">
                             <div class="inner-content">
                                 <h2 class="team-member-name">Kari Rasmus</h2>
                                 <span class="occupation">Sales man</span>
@@ -230,7 +230,7 @@
                 <div class="col-lg-3 col-sm-6 pt-5">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="assets/images/about/team/1-3-270x270.png" alt="Team Member">
+                            <img src="{{ asset('img/about/team/1-3-270x270.png') }}" alt="Team Member">
                             <div class="inner-content">
                                 <h2 class="team-member-name">Britney Cooper</h2>
                                 <span class="occupation">Sales man</span>
@@ -263,7 +263,7 @@
                 <div class="col-lg-3 col-sm-6 pt-5 pt-sm-0">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="assets/images/about/team/1-4-270x270.png" alt="Team Member">
+                            <img src="{{ asset('img/about/team/1-4-270x270.png') }}" alt="Team Member">
                             <div class="inner-content">
                                 <h2 class="team-member-name">Marissa Swan</h2>
                                 <span class="occupation">Sales man</span>
@@ -300,34 +300,34 @@
     <!-- Begin Brand Area -->
     <div class="brand-area section-space-y-axis-100">
         <div class="container">
-            <div class="brand-bg" data-bg-image="assets/images/brand/bg/1-1170x300.jpg">
+            <div class="brand-bg" data-bg-image="{{ asset('img/brand/bg/1-1170x300.jpg') }}">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="swiper-container brand-slider">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <a class="brand-item" href="#">
-                                        <img src="assets/images/brand/1-1.png" alt="Brand Image">
+                                        <img src="{{ asset('img/brand/1-1.png') }}" alt="Brand Image">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a class="brand-item" href="#">
-                                        <img src="assets/images/brand/1-2.png" alt="Brand Image">
+                                        <img src="{{ asset('img/brand/1-2.png') }}" alt="Brand Image">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a class="brand-item" href="#">
-                                        <img src="assets/images/brand/1-3.png" alt="Brand Image">
+                                        <img src="{{ asset('img/brand/1-3.png') }}" alt="Brand Image">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a class="brand-item" href="#">
-                                        <img src="assets/images/brand/1-4.png" alt="Brand Image">
+                                        <img src="{{ asset('img/brand/1-4.png') }}" alt="Brand Image">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a class="brand-item" href="#">
-                                        <img src="assets/images/brand/1-5.png" alt="Brand Image">
+                                        <img src="{{ asset('img/brand/1-5.png') }}" alt="Brand Image">
                                     </a>
                                 </div>
                             </div>

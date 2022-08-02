@@ -66,9 +66,9 @@ $(document).ready(function() {
 
 window.updateCart = () => {
     let $minicart = $('.minicart-btn');
-    let $minicartQuantity = $minicart.find('.quantity');
+    // let $minicartQuantity = $minicart.find('.quantity');
     let $minicartMenu = $('#miniCart');
-    let $minicartMenuList = $minicartMenu.find('.minicart-list');
+    // let $minicartMenuList = $minicartMenu.find('.minicart-list');
 
     function rebindCartActions() {
         $menuClose = $('.button-close');
@@ -126,7 +126,8 @@ window.updateCart = () => {
     $.when(getCartItems())
         .done((cartItemsResponse) => {
             let cartItems = cartItemsResponse.data.items;
-            console.log(cartItems);
+            let cartItemsCount = Object.keys(cartItems).length;
+
             $.ajax({
                 url: '/api/cart/template/minicart',
                 type: 'get',
@@ -136,7 +137,7 @@ window.updateCart = () => {
                 success: (response) => {
                     let template = response.data.template;
                     $minicartMenu.find('.offcanvas-body').html(template);
-                    $minicartQuantity.text(cartItems.length);
+                    $minicart.find('.quantity').text(cartItemsCount);
 
                     rebindCartActions();
                     // reinit cart actions
@@ -183,6 +184,12 @@ DOMLoadedHookFunctions.push({
                     alert(e.responseJSON.message)
                 }
             });
+        });
+
+
+        // Product images thumbnails slider
+        $('.thumbs-arrow-holder a.swiper-slide').click((e) => {
+            e.preventDefault();
         });
     }
 });

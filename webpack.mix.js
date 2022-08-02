@@ -46,6 +46,8 @@ mix.sass('resources/css/styles/style.scss', 'public/css/styles.css')
     .minify('resources/js/main.js', 'public/js/main.js')
     .minify('resources/js/index.js', 'public/js/index.js')
 
+    .minify('resources/js/components/product/cartActions.js', 'public/js/components/product/cartActions.js')
+
     .version();
 
 mix.copy('resources/img', 'public/img');

@@ -59,9 +59,10 @@
                         <li class="menu-item-has-children">
                             <a href="{{ route('catalog.index') }}">
                                 <span class="mm-text">Каталог
-                                    <i class="pe-7s-angle-down"></i>
+{{--                                    <i class="pe-7s-angle-down"></i>--}}
                                 </span>
                             </a>
+                            {{--
                             <ul class="sub-menu">
                                 <li class="menu-item-has-children">
                                     <a href="#">
@@ -181,6 +182,7 @@
                                     </ul>
                                 </li>
                             </ul>
+                            --}}
                         </li>
                         <li class="menu-item-has-children">
                             <a href="{{ route('blog.index') }}">

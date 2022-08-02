@@ -17,13 +17,16 @@ class CategoriesController extends Controller
 
     public function create()
     {
-        return view('admin.sections.categories.create');
+        $categories = Category::orderBy('id', 'desc')->get();
+
+        return view('admin.sections.categories.create', compact('categories'));
     }
 
     public function store(Request $request)
     {
         $requestCategory = $request->get('category');
-        Category::new($requestCategory['name']);
+        $parentId = $requestCategory['parent_id'] == "-1" ? null : $requestCategory['parent_id'];
+        Category::new($requestCategory['name'], $parentId);
 
         return redirect()->route('admin.categories.index')->with('success', 'Категория добавлена');
     }

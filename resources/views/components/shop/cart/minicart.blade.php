@@ -15,6 +15,6 @@
     <span class="ammount">{{ $cartItemsTotalCost }}&nbsp;₽</span>
 </div>
 <div class="group-btn_wrap d-grid gap-2">
-    <a href="cart.html" class="btn btn-dark">В корзину</a>
+    <a href="{{ route('cart.index') }}" class="btn btn-dark">В корзину</a>
     <a href="checkout.html" class="btn btn-dark">Оформить заказ</a>
 </div>

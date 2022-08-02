@@ -12,26 +12,13 @@
                                 <a href="{{ route('catalog.index') }}">Каталог</a>
                                 <ul class="drop-menu megamenu">
                                     <li>
-                                        <span class="title">Популярные категории</span>
+                                        <span class="title">Категории</span>
                                         <ul>
-                                            <li>
-                                                <a href="shop.html">Shop Default</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-grid-fullwidth.html">Shop Grid Fullwidth</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-right-sidebar.html">Shop Right Sidebar</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-list-fullwidth.html">Shop List Fullwidth</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a>
-                                            </li>
+                                            @foreach ($share_categories as $category)
+                                                <li>
+                                                    <a href="shop.html">{{ $category->name }}</a>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                 </ul>

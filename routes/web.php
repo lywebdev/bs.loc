@@ -21,6 +21,8 @@ Route::get('test', [\App\Http\Controllers\TestController::class, 'index']);
 Route::get('about', [\App\Http\Controllers\Pages\AboutController::class, 'index'])->name('about');
 Route::get('contact', [\App\Http\Controllers\Pages\ContactController::class, 'index'])->name('contact');
 
+Route::get('checkout', [\App\Http\Controllers\CheckoutController::class, 'index'])->name('checkoutForm');
+
 Route::group([
     'prefix' => 'catalog',
     'as' => 'catalog.',
@@ -28,6 +30,8 @@ Route::group([
     Route::get('', [\App\Http\Controllers\CatalogController::class, 'index'])->name('index');
     Route::get('product/{slug}', [\App\Http\Controllers\CatalogController::class, 'product'])->name('product');
     Route::get('sku/{slug}', [\App\Http\Controllers\CatalogController::class, 'productBySku'])->name('productBySku');
+
+    Route::get('{categorySlug}', [\App\Http\Controllers\CatalogController::class, 'category'])->name('category');
 });
 
 Route::group([
@@ -64,6 +68,7 @@ Route::group([
         Route::get('template/minicart', [\App\Http\Controllers\Api\Shop\CartController::class, 'getMinicartTemplate'])->name('template.minicart');
 
 //        Route::get('count-items', [\App\Http\Controllers\Api\Shop\CartController::class, 'countItems'])->name('countItems');
-//        Route::post('set-cart-item', [\App\Http\Controllers\Api\Shop\CartController::class, 'setCartItem'])->name('setCartItem');
+        Route::post('set-cart-item', [\App\Http\Controllers\Api\Shop\CartController::class, 'setCartItem'])->name('setCartItem');
+        Route::post('unset-cart-item', [\App\Http\Controllers\Api\Shop\CartController::class, 'unsetCartItem'])->name('unsetCartItem');
     });
 });

@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\View\Composers\HeaderCartComposer;
+use App\View\Composers\HeaderComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -14,6 +14,6 @@ class ViewServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        View::composer('components.header.header', HeaderCartComposer::class);
+        View::composer('components.header.header', HeaderComposer::class);
     }
 }

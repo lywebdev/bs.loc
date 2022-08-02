@@ -1,4 +1,4 @@
-@isset($latestPosts)
+@if (isset($latestPosts) && $latestPosts->count())
 <!-- Begin Blog Area -->
 <div class="blog-area section-space-bottom-100 {{ $classes ?? '' }}">
     <div class="container">
